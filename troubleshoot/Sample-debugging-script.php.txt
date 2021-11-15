@@ -1,0 +1,33 @@
+<?php
+// Call all below in index.php
+require('troubleshoot/custom-theme-debugger.php');
+
+// --> Working - include debug from the web root dir as below:
+// Parse the $debugger as an argument of anonymous function
+/** @noinspection PhpIncludeInspection */
+include_once(get_template_directory().'/troubleshoot/custom-theme-debugger.php'); // Include debug OK
+
+// 1. Initialize debugger
+$debugger = new Custom_Theme_Debugger();
+
+// 2. Log the problematic variables:
+// ... example:
+$debugger->write_log_general($thumbnailUrl);
+$debugger->write_log_general($attachedImgs);
+
+// 3. always unset debugger when finish:
+unset($debugger);
+
+//-----------------------------------------
+
+$debugger = new Custom_Theme_Debugger();
+global $wp_scripts;
+
+$logResults = array();
+foreach ($wp_scripts->registered as $item){
+  $logResults[] = sprintf("Handle : %s => Source: %s", $item->handle, $item->src);
+}
+
+$debugger->write_variable_to_general_log( $logResults );
+
+?>
