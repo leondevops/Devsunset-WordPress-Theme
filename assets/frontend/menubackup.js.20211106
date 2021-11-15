@@ -1,0 +1,157 @@
+
+jQuery(document).ready(function($) {
+  /**=================================================**/
+  /** Menu section **/
+  /*** Hover effect for lvl 1 - 2nd item - Main Menu ***/
+  /**=================================================**/
+
+  $('li.menu-item.custom-menu-item-2').hover(
+    function() {
+      // $(this).children().css("display","block"); // Apply css OK. But leave hover hide all ???
+      $('li.menu-item.custom-menu-item-2 > ul')
+        .addClass('show')
+        .css({
+          "position": "absolute",
+          "top": "100%",
+          "min-width": 0
+
+        });
+      $('li.menu-item.custom-menu-item-2 > a').addClass('show' );
+
+    }, function(){
+      $('li.menu-item.custom-menu-item-2 > ul').removeClass('show');
+      $('li.menu-item.custom-menu-item-2 > a').removeClass('show');
+    }
+  );
+
+  /*** Hover effect for lvl 2 - 1st item - Main Menu ***/
+  $('li.menu-item.custom-menu-item-2-1').hover(
+    function() {
+      // $(this).children().css("display","block"); // Apply css OK. But leave hover hide all ???
+      $('li.menu-item.custom-menu-item-2-1 > ul')
+        .addClass('show')
+        .css({
+          "position": "absolute",
+          "left": "100%",
+          "top": "0"
+
+        });
+      $('li.menu-item.custom-menu-item-2-1 > a').addClass('show' );
+
+    }, function(){
+      $('li.menu-item.custom-menu-item-2-1 > ul').removeClass('show');
+      $('li.menu-item.custom-menu-item-2-1 > a').removeClass('show');
+    }
+  );
+
+  /*** Hover effect for lvl 2 - 2nd item - Main Menu ***/
+  $('li.menu-item.custom-menu-item-2-2').hover(
+    function() {
+      // $(this).children().css("display","block"); // Apply css OK. But leave hover hide all ???
+      $('li.menu-item.custom-menu-item-2-2 > ul')
+        .addClass('show')
+        .css({
+          "position": "absolute",
+          "left": "100%",
+          "top": "0"
+
+        });
+      $('li.menu-item.custom-menu-item-2-2 > a').addClass('show' );
+
+    }, function(){
+      $('li.menu-item.custom-menu-item-2-2 > ul').removeClass('show');
+      $('li.menu-item.custom-menu-item-2-2 > a').removeClass('show');
+    }
+  );
+
+  /*** Hover effect for lvl 1 - 3rd item - Main Menu ***/
+  $('li.menu-item.custom-menu-item-3').hover(
+    function() {
+      // $(this).children().css("display","block"); // Apply css OK. But leave hover hide all ???
+      $('li.menu-item.custom-menu-item-3 > ul')
+        .addClass('show')
+        .css({
+          "position": "absolute",
+          "top": "100%",
+          "min-width" : "0"
+
+        });
+      $('li.menu-item.custom-menu-item-3 > a').addClass('show' );
+
+    }, function(){
+      $('li.menu-item.custom-menu-item-3 > ul').removeClass('show');
+      $('li.menu-item.custom-menu-item-3 > a').removeClass('show');
+    }
+  );
+
+  var csMenuItem2 = $('li.custom-menu-item-2');
+  var csMenuItem2_1 = $('li.custom-menu-item-2-1');
+  var csMenuItem2_2 = $('li.custom-menu-item-2-2');
+
+  var csMenuItem2_lvl1 = $('li.custom-menu-item-2 li.menu-item.nav-item.menu-item-lvl-1');
+  var csMenuItem2_width = csMenuItem2.width() + 'px';
+  var csMenuItem2_lvl1_width = csMenuItem2_lvl1.width() + 'px';
+  var cssMenuItem2_finalWidth = (csMenuItem2_width > csMenuItem2_lvl1_width) ? csMenuItem2_width : csMenuItem2_lvl1_width;
+
+  csMenuItem2.css('width', cssMenuItem2_finalWidth);
+  csMenuItem2.children('a').css('width', cssMenuItem2_finalWidth);
+  csMenuItem2.children('ul').css('width', cssMenuItem2_finalWidth);
+  csMenuItem2_lvl1.css('width', cssMenuItem2_finalWidth);
+
+  /** Working - only trigger event when clicking to parent HTML element **/
+// Menu item 2
+  csMenuItem2.click(function(e){
+    // window.open($('li.custom-menu-item-2 > a').attr('href'),'_blank');
+    window.open($('li.custom-menu-item-2 > a').attr('href'),'_self');
+  });
+
+  $('li.custom-menu-item-2 > ul').click(function(e){
+    e.stopPropagation();
+  });
+
+// Menu item 2-1.
+  csMenuItem2_1.click(function(e){
+    // window.open($('li.custom-menu-item-2-1 > a').attr('href'),'_blank');
+    window.open($('li.custom-menu-item-2-1 > a').attr('href'),'_self');
+  });
+
+  $('li.custom-menu-item-2-1 > ul').click(function(e){
+    e.stopPropagation();
+  });
+
+// Menu item 2-2.
+  csMenuItem2_2.click(function(e){
+    // window.open($('li.custom-menu-item-2-2 > a').attr('href'),'_blank');
+    window.open($('li.custom-menu-item-2-2 > a').attr('href'),'_self');
+  });
+
+  $('li.custom-menu-item-2-2 > ul').click(function(e){
+    e.stopPropagation();
+  });
+
+  /*csMenuItem2.children('ul').click(function(e){
+    e.stopPropagation();
+  });*/
+
+  /** 2. Recalculate width of menu item 3 **/
+  var csMenuItem3 = $('li.custom-menu-item-3');
+  var csMenuItem3_lvl1 = $('li.custom-menu-item-3 li.menu-item.nav-item.menu-item-lvl-1');
+  var csMenuItem3_width = csMenuItem3.width() + 'px';
+  var csMenuItem3_lvl1_width = csMenuItem3_lvl1.width() + 'px';
+  var cssMenuItem3_finalWidth = (csMenuItem3_width > csMenuItem3_lvl1_width) ? csMenuItem3_width : csMenuItem3_lvl1_width;
+
+  csMenuItem3.css('width', cssMenuItem3_finalWidth);
+  csMenuItem3.children('a').css('width', cssMenuItem3_finalWidth);
+  csMenuItem3.children('ul').css('width', cssMenuItem3_finalWidth);
+  csMenuItem3_lvl1.css('width', cssMenuItem3_finalWidth);
+
+  csMenuItem3.click(function(e){
+    // window.open($('li.custom-menu-item-3 > a').attr('href'),'_blank');
+    window.open($('li.custom-menu-item-3 > a').attr('href'),'_self');
+  });
+
+  $('li.custom-menu-item-3 > ul').click(function(e){
+    e.stopPropagation();
+  });
+
+}); //jQuery(document).ready(function($){
