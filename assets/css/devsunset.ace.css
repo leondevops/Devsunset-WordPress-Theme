@@ -1,0 +1,13 @@
+/*
+    @Package devsunsettheme
+
+    - This is CSS for Custom CSS Editor in admin setting pages.
+*/
+
+#customCss {
+    position: relative;
+    border: 2px solid black;
+    width: 500px;
+    height: 400px;
+}
+

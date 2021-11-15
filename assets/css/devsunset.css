@@ -1,0 +1,2772 @@
+/**
+*    @Package Devsunsettheme
+*
+*  - Generic custom CSS for the Devsunset theme
+**/
+/*
+Import
+---------------
+*/
+/**
+*    @Package devsunsettheme
+*
+*  - Generic custom CSS for the Devsunset theme
+**/
+/*
+// Sample change default webkit scroll bar
+body::-webkit-scrollbar {
+  width: 12px;               !* width of the entire scrollbar *!
+}
+body::-webkit-scrollbar-track {
+  background: orange;        !* color of the tracking area *!
+}
+body::-webkit-scrollbar-thumb {
+  background-color: blue;    !* color of the scroll thumb *!
+  border-radius: 20px;       !* roundness of the scroll thumb *!
+  border: 3px solid orange;  !* creates padding around scroll thumb *!
+}
+
+*/
+/**
+*    @Package devsunsettheme
+* * Need to test the code in the actual position before import. (file devsunset.scss)
+**/
+/*
+Devsunset variables
+-----------------------
+*/
+/* Form control */
+/* width
+* Referential source to design size : https://getbootstrap.com/docs/5.1/layout/grid/
+*/
+/**
+*    @Package devsunsettheme
+* * Need to test the code in the actual position before import. (file devsunset.scss)
+**/
+/*
+	Devsunset Mixins
+	------------------------------------------------
+*/
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes clockwiseSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes counterclockwiseSpin {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+/**
+*    @Package devsunsettheme
+* * Need to test the code in the actual position before import. (file devsunset.scss)
+**/
+/*
+	Devsunset Font Icon
+	------------------------------------------------
+	- Define the custom devsunset Font here
+	- These code are actually called in devsunset.scss => ignore warning
+*/
+@font-face {
+  font-family: "devsunset-icon";
+  src: url("../../assets/fonts/devsunset-icon.eot?dxcjr7");
+  src: url("../../assets/fonts/devsunset-icon.eot?dxcjr7#iefix") format("embedded-opentype"), url("../../assets/fonts/devsunset-icon.ttf?dxcjr7") format("truetype"), url("../../assets/fonts/devsunset-icon.woff?dxcjr7") format("woff"), url("../../assets/fonts/devsunset-icon.svg?dxcjr7#sunset-icon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.devsunset-icon {
+  font-family: "devsunset-icon" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Assign classname to custom .svg file
+ *1. Assign class name to custom image file (file png). this work with custom png
+* https://windtwebdesign.com/en/how-to-add-custom-icons-to-my-wordpress-menu-without-using-plugins/
+* 2. Add custom font icons
+* https://boldthemes.ticksy.com/article/12694/
+* ** The properties may be overwritten in the main included files
+ */
+/* Local Left arrow file */
+.devsunset-local-chevron-left {
+  content: url("../../assets/fonts/devsunset-local-chevron-left.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+/* Local right arrow file */
+.devsunset-local-chevron-right {
+  content: url("../../assets/fonts/devsunset-local-chevron-right.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-audio:before {
+  content: "\e800";
+}
+
+/* These are equivalent chevron arrow left & right
+ * - styling the chevron arrow by styling these pseudo items
+ * - Where to obtain these values ???
+ */
+.devsunset-chevron-left:before {
+  content: "\e801";
+}
+
+.devsunset-chevron-right:before {
+  content: "\e802";
+}
+
+.devsunset-close:before {
+  content: "\e803";
+}
+
+.devsunset-comment:before {
+  content: "\e804";
+}
+
+.devsunset-link:before {
+  content: "\e805";
+}
+
+.devsunset-loading:before {
+  content: "\e806";
+}
+
+.devsunset-logo:before {
+  content: "\e807";
+}
+
+.devsunset-menu:before {
+  content: "\e808";
+}
+
+.devsunset-pencil:before {
+  content: "\e809";
+}
+
+.devunset-pics:before {
+  content: "\e80a";
+}
+
+.devsunset-search:before {
+  content: "\e80b";
+}
+
+.devsunset-share:before {
+  content: "\e80c";
+}
+
+.devsunset-tag:before {
+  content: "\e80d";
+}
+
+.devsunset-video:before {
+  content: "\e80e";
+}
+
+/*
+* ==============================================
+* Self-defined fonts icons from local host
+* ==============================================
+*/
+.devsunset-twitter {
+  content: url("../../assets/icons/devsunset-twitter.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-facebook {
+  content: url("../../assets/icons/devsunset-facebook.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-google-plus {
+  content: url("../../assets/icons/devsunset-google-plus.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-clock {
+  content: url("../../assets/icons/devsunset-clock.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-comment-bubble {
+  content: url("../../assets/icons/devsunset-comment-bubble.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-edit {
+  content: url("../../assets/icons/devsunset-edit.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-delete {
+  content: url("../../assets/icons/devsunset-delete.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+/* These 2 values already start from <theme_root_dir>/assets/ */
+.devsunset-comment-white {
+  content: url("../../assets/icons/devsunset-comment-white.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-share-white {
+  content: url("../../assets/icons/devsunset-share-white.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-dropdown-simple {
+  content: url("../../assets/icons/devsunset-dropdown-simple.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+/**
+*    @Package devsunsettheme
+* * Need to test the code in the actual position before import. (file devsunset.scss)
+**/
+header.devsunset-header-container, .devsunset-format-gallery .entry-content .carousel.slide a.carousel-control-next, .devsunset-format-gallery .entry-content .carousel.slide a.carousel-control-prev, .devsunset-format-gallery .entry-header, .devsunset-format-image .entry-header {
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+.devsunset-format-gallery .entry-content .carousel.slide .carousel-inner .carousel-item div.image-caption, .devsunset-format-image .entry-header div.entry-excerpt.image-caption {
+  background: black;
+  background: -moz-linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+}
+
+/**
+*    @Package devsunsettheme
+* * Need to test the code in the actual position before import. (file devsunset.scss)
+**/
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+  margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+  display: block;
+  margin: 5px auto 5px auto;
+}
+
+/*.aligncenter{
+  @include fullwidth();
+}*/
+.alignright {
+  float: right;
+  margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+  float: right;
+  margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+  margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img.aligncenter {
+  width: 100%;
+  height: auto;
+}
+
+.wp-caption {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  max-width: 96%;
+  /* Image does not overflow the content area */
+  padding: 5px 3px 10px;
+  text-align: center;
+}
+
+.wp-caption.alignnone {
+  margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+  margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+  margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+  border: 0 none;
+  height: auto;
+  margin: 0;
+  max-width: 98.5%;
+  padding: 0;
+  width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+  font-size: 11px;
+  line-height: 17px;
+  margin: 0;
+  padding: 0 4px 5px;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
+
+/* Front-end display*/
+/**
+*    @Package devsunsettheme
+*
+*  - Generic custom CSS for the Devsunset theme
+**/
+/**
+ *  1. Devsunset header navigation menu section
+ *-----------------------------
+ **/
+div.devsunset-header-navigation-menu .devsunset-main-nav-menu {
+  display: inline-block;
+  text-align: center;
+  border: none;
+  margin: 0 1em;
+  padding: 0 1em;
+  /* General menu item.
+  * increase size by padding top/bottom to keep hover effects */
+}
+div.devsunset-header-navigation-menu .devsunset-main-nav-menu ul.nav.navbar-nav {
+  display: inline-block;
+}
+div.devsunset-header-navigation-menu .devsunset-main-nav-menu ul.dropdown-menu.show {
+  position: absolute;
+  border: 1px solid #898989;
+  top: 0;
+  min-width: auto;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-transition: all 350ms ease;
+  -moz-transition: all 350ms ease;
+  /* Source transition :
+  * https://css-tricks.com/almanac/properties/t/transition/
+  */
+  -ms-transition: all 350ms ease;
+  -o-transition: all 350ms ease;
+  transition: all 350ms ease;
+}
+div.devsunset-header-navigation-menu .devsunset-main-nav-menu li.menu-item-has-children.dropdown-submenu {
+  padding-left: 0;
+}
+div.devsunset-header-navigation-menu .devsunset-main-nav-menu li.menu-item-has-children.dropdown-submenu a, div.devsunset-header-navigation-menu .devsunset-main-nav-menu li.menu-item-has-children.dropdown-submenu ul {
+  padding-left: 0;
+}
+div.devsunset-header-navigation-menu .devsunset-main-nav-menu li.menu-item {
+  padding: 0.25em 0.25em;
+  margin: 0 0.25em;
+  float: none;
+  display: inline-block;
+}
+div.devsunset-header-navigation-menu .devsunset-main-nav-menu li.menu-item.show a {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: all 350ms ease;
+  -moz-transition: all 350ms ease;
+  /* Source transition :
+  * https://css-tricks.com/almanac/properties/t/transition/
+  */
+  -ms-transition: all 350ms ease;
+  -o-transition: all 350ms ease;
+  transition: all 350ms ease;
+}
+div.devsunset-header-navigation-menu .devsunset-main-nav-menu li.menu-item a {
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: black 1px 1px;
+  opacity: 0.8;
+  letter-spacing: 0.05em;
+  background: none;
+  -webkit-transition: opacity 320 ease;
+  -moz-transition: opacity 320 ease;
+  /* Source transition :
+  * https://css-tricks.com/almanac/properties/t/transition/
+  */
+  -ms-transition: opacity 320 ease;
+  -o-transition: opacity 320 ease;
+  transition: opacity 320 ease;
+}
+div.devsunset-header-navigation-menu .devsunset-main-nav-menu li.menu-item a:hover, div.devsunset-header-navigation-menu .devsunset-main-nav-menu li.menu-item a:focus, div.devsunset-header-navigation-menu .devsunset-main-nav-menu li.menu-item a:visited {
+  color: white;
+  font-weight: bold;
+  background: none;
+  opacity: 1;
+  -webkit-transition: all 350ms ease;
+  -moz-transition: all 350ms ease;
+  /* Source transition :
+  * https://css-tricks.com/almanac/properties/t/transition/
+  */
+  -ms-transition: all 350ms ease;
+  -o-transition: all 350ms ease;
+  transition: all 350ms ease;
+}
+div.devsunset-header-navigation-menu .devsunset-main-nav-menu li.menu-item a:hover:after, div.devsunset-header-navigation-menu .devsunset-main-nav-menu li.menu-item a:focus:after, div.devsunset-header-navigation-menu .devsunset-main-nav-menu li.menu-item a:visited:after {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+}
+div.devsunset-header-navigation-menu .devsunset-main-nav-menu li.menu-item a:after {
+  content: "";
+  display: block;
+  align-self: stretch;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #fff;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  /* Source transition :
+  * https://css-tricks.com/almanac/properties/t/transition/
+  */
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+  opacity: 0;
+  -webkit-transform: translateY(-0.9em);
+  -moz-transform: translateY(-0.9em);
+  -ms-transform: translateY(-0.9em);
+  -o-transform: translateY(-0.9em);
+  transform: translateY(-0.9em);
+}
+div.devsunset-header-navigation-menu .devsunset-main-nav-menu .dropdown-toggle::after {
+  border-top: 0;
+  border-bottom: 0;
+  margin: 0;
+  padding: 0;
+  align-self: stretch;
+}
+
+/**
+ * 2. Sidebar Menu section
+ *-----------------------------
+ **/
+.devsunset-sidebar-menu {
+  top: 1em;
+  left: 1em;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+}
+.devsunset-sidebar-menu ul.dropdown-menu {
+  background-color: #1f1f1f;
+  position: relative;
+  transform: none;
+}
+
+/**
+*    @Package devsunsettheme
+*
+*  - Generic custom CSS for the Devsunset theme
+**/
+/**
+*    @Package devsunsettheme
+* * Need to test the code in the actual position before import. (file devsunset.scss)
+**/
+/*
+Devsunset variables
+-----------------------
+*/
+/* Form control */
+/* width
+* Referential source to design size : https://getbootstrap.com/docs/5.1/layout/grid/
+*/
+/**
+*    @Package devsunsettheme
+* * Need to test the code in the actual position before import. (file devsunset.scss)
+**/
+/*
+	Devsunset Mixins
+	------------------------------------------------
+*/
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes clockwiseSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes counterclockwiseSpin {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+/**
+*    @Package devsunsettheme
+* * Need to test the code in the actual position before import. (file devsunset.scss)
+**/
+/*
+	Devsunset Font Icon
+	------------------------------------------------
+	- Define the custom devsunset Font here
+	- These code are actually called in devsunset.scss => ignore warning
+*/
+@font-face {
+  font-family: "devsunset-icon";
+  src: url("../../assets/fonts/devsunset-icon.eot?dxcjr7");
+  src: url("../../assets/fonts/devsunset-icon.eot?dxcjr7#iefix") format("embedded-opentype"), url("../../assets/fonts/devsunset-icon.ttf?dxcjr7") format("truetype"), url("../../assets/fonts/devsunset-icon.woff?dxcjr7") format("woff"), url("../../assets/fonts/devsunset-icon.svg?dxcjr7#sunset-icon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.devsunset-icon {
+  font-family: "devsunset-icon" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Assign classname to custom .svg file
+ *1. Assign class name to custom image file (file png). this work with custom png
+* https://windtwebdesign.com/en/how-to-add-custom-icons-to-my-wordpress-menu-without-using-plugins/
+* 2. Add custom font icons
+* https://boldthemes.ticksy.com/article/12694/
+* ** The properties may be overwritten in the main included files
+ */
+/* Local Left arrow file */
+.devsunset-local-chevron-left {
+  content: url("../../assets/fonts/devsunset-local-chevron-left.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+/* Local right arrow file */
+.devsunset-local-chevron-right {
+  content: url("../../assets/fonts/devsunset-local-chevron-right.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-audio:before {
+  content: "\e800";
+}
+
+/* These are equivalent chevron arrow left & right
+ * - styling the chevron arrow by styling these pseudo items
+ * - Where to obtain these values ???
+ */
+.devsunset-chevron-left:before {
+  content: "\e801";
+}
+
+.devsunset-chevron-right:before {
+  content: "\e802";
+}
+
+.devsunset-close:before {
+  content: "\e803";
+}
+
+.devsunset-comment:before {
+  content: "\e804";
+}
+
+.devsunset-link:before {
+  content: "\e805";
+}
+
+.devsunset-loading:before {
+  content: "\e806";
+}
+
+.devsunset-logo:before {
+  content: "\e807";
+}
+
+.devsunset-menu:before {
+  content: "\e808";
+}
+
+.devsunset-pencil:before {
+  content: "\e809";
+}
+
+.devunset-pics:before {
+  content: "\e80a";
+}
+
+.devsunset-search:before {
+  content: "\e80b";
+}
+
+.devsunset-share:before {
+  content: "\e80c";
+}
+
+.devsunset-tag:before {
+  content: "\e80d";
+}
+
+.devsunset-video:before {
+  content: "\e80e";
+}
+
+/*
+* ==============================================
+* Self-defined fonts icons from local host
+* ==============================================
+*/
+.devsunset-twitter {
+  content: url("../../assets/icons/devsunset-twitter.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-facebook {
+  content: url("../../assets/icons/devsunset-facebook.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-google-plus {
+  content: url("../../assets/icons/devsunset-google-plus.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-clock {
+  content: url("../../assets/icons/devsunset-clock.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-comment-bubble {
+  content: url("../../assets/icons/devsunset-comment-bubble.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-edit {
+  content: url("../../assets/icons/devsunset-edit.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-delete {
+  content: url("../../assets/icons/devsunset-delete.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+/* These 2 values already start from <theme_root_dir>/assets/ */
+.devsunset-comment-white {
+  content: url("../../assets/icons/devsunset-comment-white.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-share-white {
+  content: url("../../assets/icons/devsunset-share-white.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-dropdown-simple {
+  content: url("../../assets/icons/devsunset-dropdown-simple.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+/**
+*    @Package devsunsettheme
+* * Need to test the code in the actual position before import. (file devsunset.scss)
+**/
+header.devsunset-header-container, .devsunset-format-gallery .entry-content .carousel.slide a.carousel-control-next, .devsunset-format-gallery .entry-content .carousel.slide a.carousel-control-prev, .devsunset-format-gallery .entry-header, .devsunset-format-image .entry-header {
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+.devsunset-format-gallery .entry-content .carousel.slide .carousel-inner .carousel-item div.image-caption, .devsunset-format-image .entry-header div.entry-excerpt.image-caption {
+  background: black;
+  background: -moz-linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+}
+
+/**
+*    @Package devsunsettheme
+* * Need to test the code in the actual position before import. (file devsunset.scss)
+**/
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+  margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+  display: block;
+  margin: 5px auto 5px auto;
+}
+
+/*.aligncenter{
+  @include fullwidth();
+}*/
+.alignright {
+  float: right;
+  margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+  float: right;
+  margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+  margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img.aligncenter {
+  width: 100%;
+  height: auto;
+}
+
+.wp-caption {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  max-width: 96%;
+  /* Image does not overflow the content area */
+  padding: 5px 3px 10px;
+  text-align: center;
+}
+
+.wp-caption.alignnone {
+  margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+  margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+  margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+  border: 0 none;
+  height: auto;
+  margin: 0;
+  max-width: 98.5%;
+  padding: 0;
+  width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+  font-size: 11px;
+  line-height: 17px;
+  margin: 0;
+  padding: 0 4px 5px;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
+
+/*
+* -------------------------
+* SIDEBAR SECTION - FRONTEND PAGE
+* ---------------------------
+*/
+/* 1. Sidebar navigation menu */
+.devsunset-sidebar-menu ul.nav.navbar-nav.navbar-collapse {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.devsunset-sidebar-menu .menu-item-has-children a {
+  display: inline-block;
+}
+.devsunset-sidebar-menu .menu-item-has-children span.dropdown-toggle {
+  width: 1.5em;
+  height: 1.5em;
+  display: inline-block;
+  margin: 0 auto;
+  filter: brightness(0) invert(1);
+}
+.devsunset-sidebar-menu .menu-item-has-children ul.dropdown-menu {
+  position: relative;
+  border: 1px solid white;
+  border-radius: 2px;
+}
+.devsunset-sidebar-menu .JS-open-submenu-lvl-0 {
+  display: block;
+  position: relative;
+  transform: none;
+  -webkit-transition: all 350 ease;
+  -moz-transition: all 350 ease;
+  /* Source transition :
+  * https://css-tricks.com/almanac/properties/t/transition/
+  */
+  -ms-transition: all 350 ease;
+  -o-transition: all 350 ease;
+  transition: all 350 ease;
+}
+
+/* 2. General Sidebar overlay */
+.sidebar-overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  z-index: 19;
+  display: none;
+  cursor: e-resize;
+}
+
+/* 2. Inner sidebar container */
+.devsunset-sidebar-container {
+  margin: 0;
+  padding: 0;
+  max-width: 300px;
+}
+
+.devsunset-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  color: #ffffff;
+  background-color: #1f1f1f;
+  width: 100%;
+  max-width: 300px;
+  height: 100vh;
+  overflow: scroll;
+  -webkit-transition: transform 350ms ease;
+  -moz-transition: transform 350ms ease;
+  /* Source transition :
+  * https://css-tricks.com/almanac/properties/t/transition/
+  */
+  -ms-transition: transform 350ms ease;
+  -o-transition: transform 350ms ease;
+  transition: transform 350ms ease;
+  /* Sidebar content */
+  /* Sidebar close buttons */
+}
+.devsunset-sidebar.sidebar-closed {
+  -webkit-transform: TranslateX(100%);
+  -moz-transform: TranslateX(100%);
+  -ms-transform: TranslateX(100%);
+  -o-transform: TranslateX(100%);
+  transform: TranslateX(100%);
+}
+.devsunset-sidebar a {
+  text-decoration: none;
+  font-weight: 300;
+  color: #bababa;
+}
+.devsunset-sidebar a:hover, .devsunset-sidebar a:focus {
+  font-weight: 500;
+  color: #fff;
+}
+.devsunset-sidebar .devsunset-sidebar-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: 100vh;
+}
+.devsunset-sidebar .sidebar-scroll {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.devsunset-sidebar .sidebar-close {
+  text-decoration: none;
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 99;
+}
+.devsunset-sidebar .sidebar-close:hover, .devsunset-sidebar .sidebar-close:focus {
+  color: #F56B08;
+}
+
+/* Sidebar open button & open button containers */
+.devsunset-open-sidebar-container {
+  position: sticky;
+  top: 1em;
+  right: 1em;
+  width: 2em;
+  height: 2em;
+  background-color: rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+  text-shadow: 1px 1px black;
+  z-index: 98;
+  /* Sidebar open button &  */
+}
+.devsunset-open-sidebar-container .sidebar-open {
+  position: absolute;
+  margin: 0;
+  padding: 0.25em 0.25em 0.25em 0.25em;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/** Custom widget - Devsunset widget **/
+.devsunset-widget-custom-profile {
+  /*
+  * Sidebar - dash icons wrapper.
+  * ==================
+  **/
+  /** Remove button in the profile picture */
+  /*
+  * Profile picture
+  * ==================
+  **/
+}
+.devsunset-widget-custom-profile h3.devsunset-username, .devsunset-widget-custom-profile h4.devsunset-description {
+  font-weight: 100;
+  color: #FFF;
+}
+.devsunset-widget-custom-profile h3.devsunset-username {
+  font-size: 1em;
+  margin: 0 0 5px;
+}
+.devsunset-widget-custom-profile h4.devsunset-description {
+  font-size: 1.2em;
+  margin: 5px 5px 10px;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+.devsunset-widget-custom-profile .icons-wrapper .devsunset-icon-sidebar {
+  filter: brightness(0) invert(1);
+  margin: 0 2px;
+  width: 1em;
+  height: 1em;
+}
+.devsunset-widget-custom-profile .icons-wrapper a {
+  text-decoration: none;
+}
+.devsunset-widget-custom-profile .devsunset-icon-button:before {
+  /*margin-top : 0.5em;*/
+  margin-bottom: 0.2em;
+  vertical-align: middle;
+}
+.devsunset-widget-custom-profile div.profile-image-container {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+.devsunset-widget-custom-profile div.profile-picture {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 10px auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/**
+* General widget section
+* ----------------------------------------------
+**/
+.devsunset-widget {
+  margin: 10px;
+  padding: 0 5px;
+  /* 1. Default tag cloud widget */
+  /* 2. Default categories widget */
+  /* Default recent-comments widget */
+  /* 4. Custom recent-comments widget. &.devsunset_widget_recent_comments */
+  /* 5. Custom widgets - most popular posts */
+}
+.devsunset-widget h2.devsunset-widget-title {
+  font-size: 15px;
+  padding: 0.5em;
+  font-weight: 300;
+  display: block;
+  text-align: center;
+  background-color: #303030;
+  border-radius: 15px;
+  line-height: 1em;
+  letter-spacing: 0.1em;
+}
+.devsunset-widget.widget_tag_cloud div.tagcloud {
+  text-align: center;
+}
+.devsunset-widget.widget_tag_cloud div.tagcloud a {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+}
+.devsunset-widget.widget_categories ul {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.devsunset-widget.widget_categories ul li.cat-item {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.devsunset-widget.widget_categories ul li.cat-item span {
+  text-align: center;
+  width: 1.6em;
+  height: 1.6em;
+  margin-bottom: 0.2em;
+  background-color: #333333;
+  border-radius: 50%;
+}
+.devsunset-widget.widget_recent_comments ul {
+  list-style: none;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.devsunset-widget.widget_recent_comments ul li.recentcomments {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  white-space: nowrap;
+  align-items: stretch;
+  width: 90%;
+  max-width: 250px;
+}
+.devsunset-widget.widget_recent_comments ul li.recentcomments span.comment-author-link {
+  flex-basis: 100%;
+  border-bottom: 1px solid grey;
+  padding-left: 0;
+  margin-left: 0;
+  padding-right: 0.5em;
+  margin-right: 0.5em;
+}
+.devsunset-widget.widget_recent_comments ul li.recentcomments span.comment-author-link a {
+  font-size: 1em;
+  font-weight: 500;
+}
+.devsunset-widget.widget_recent_comments ul li.recentcomments a {
+  text-align: right;
+  flex-basis: 80%;
+  font-size: 0.6em;
+  font-weight: 300;
+  flex-shrink: 2;
+  width: 90%;
+  max-width: 250px;
+}
+.devsunset-widget.devsunset_widget_recent_comments ul {
+  list-style: none;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.devsunset-widget.devsunset_widget_recent_comments ul li.recentcomments {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  white-space: nowrap;
+  align-items: stretch;
+  width: 90%;
+  max-width: 250px;
+}
+.devsunset-widget.devsunset_widget_recent_comments ul li.recentcomments span.comment-author-link {
+  flex-basis: 100%;
+  border-bottom: 1px solid grey;
+  padding-left: 0;
+  margin-left: 0;
+  padding-right: 0.5em;
+  margin-right: 0.5em;
+}
+.devsunset-widget.devsunset_widget_recent_comments ul li.recentcomments span.comment-author-link a {
+  font-size: 0.8em;
+  font-weight: 500;
+}
+.devsunset-widget.devsunset_widget_recent_comments ul li.recentcomments div.devsunset-comment-detail {
+  display: inline-block;
+  text-align: justify;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.devsunset-widget.devsunset_widget_recent_comments ul li.recentcomments div.devsunset-comment-detail span {
+  display: inline-block;
+  font-size: 0.9em;
+  font-weight: 400;
+}
+.devsunset-widget.devsunset_widget_recent_comments ul li.recentcomments div.devsunset-comment-detail a {
+  width: 90%;
+  max-width: 250px;
+  height: auto;
+  display: inline-block;
+  font-size: 0.8em;
+  white-space: break-spaces;
+  width: 90%;
+  max-width: 250px;
+}
+.devsunset-widget.devsunset-widget-popular-posts div.media {
+  display: flex;
+  flex-direction: column;
+  padding: 0.25em 0.5em;
+  margin: 0.25em;
+}
+.devsunset-widget.devsunset-widget-popular-posts div.media-content {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 0.25em;
+}
+.devsunset-widget.devsunset-widget-popular-posts div.media-content div.media-left img {
+  padding-top: 0.5em;
+  padding-right: 0.5em;
+}
+.devsunset-widget.devsunset-widget-popular-posts div.media-content div.media-body {
+  display: inline-block;
+}
+.devsunset-widget.devsunset-widget-popular-posts div.media-content div.media-body a {
+  text-decoration: none;
+  white-space: break-spaces;
+  font-weight: 400;
+  font-size: 0.8em;
+  color: #bababa;
+  margin: auto 0;
+}
+.devsunset-widget.devsunset-widget-popular-posts div.media-content div.media-body a:hover, .devsunset-widget.devsunset-widget-popular-posts div.media-content div.media-body a:focus {
+  color: #fff;
+  white-space: break-spaces;
+}
+.devsunset-widget.devsunset-widget-popular-posts div.media-meta {
+  font-size: 0.8em;
+  border-top: 1px solid grey;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: #bababa;
+}
+.devsunset-widget.devsunset-widget-popular-posts div.media-meta div.meta-share, .devsunset-widget.devsunset-widget-popular-posts div.media-meta div.meta-comments {
+  display: inline-block;
+  width: 50%;
+  height: 1.2em;
+  padding: 0.25em 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0.25em;
+}
+.devsunset-widget.devsunset-widget-popular-posts div.media-meta div.meta-share span, .devsunset-widget.devsunset-widget-popular-posts div.media-meta div.meta-comments span {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  padding-right: 0.2em;
+}
+.devsunset-widget.devsunset-widget-popular-posts div.media-meta div.meta-share p, .devsunset-widget.devsunset-widget-popular-posts div.media-meta div.meta-comments p {
+  display: inline-block;
+  padding-left: 0.02em;
+}
+
+/**
+*    @Package Devsunsettheme
+*
+*  - Generic custom CSS for the Devsunset theme
+**/
+/**
+*    @Package devsunsettheme
+* * Need to test the code in the actual position before import. (file devsunset.scss)
+**/
+/*
+Devsunset variables
+-----------------------
+*/
+/* Form control */
+/* width
+* Referential source to design size : https://getbootstrap.com/docs/5.1/layout/grid/
+*/
+/**
+*    @Package devsunsettheme
+* * Need to test the code in the actual position before import. (file devsunset.scss)
+**/
+/*
+	Devsunset Mixins
+	------------------------------------------------
+*/
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes clockwiseSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes counterclockwiseSpin {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+/**
+*    @Package devsunsettheme
+* * Need to test the code in the actual position before import. (file devsunset.scss)
+**/
+/*
+	Devsunset Font Icon
+	------------------------------------------------
+	- Define the custom devsunset Font here
+	- These code are actually called in devsunset.scss => ignore warning
+*/
+@font-face {
+  font-family: "devsunset-icon";
+  src: url("../../assets/fonts/devsunset-icon.eot?dxcjr7");
+  src: url("../../assets/fonts/devsunset-icon.eot?dxcjr7#iefix") format("embedded-opentype"), url("../../assets/fonts/devsunset-icon.ttf?dxcjr7") format("truetype"), url("../../assets/fonts/devsunset-icon.woff?dxcjr7") format("woff"), url("../../assets/fonts/devsunset-icon.svg?dxcjr7#sunset-icon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.devsunset-icon {
+  font-family: "devsunset-icon" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Assign classname to custom .svg file
+ *1. Assign class name to custom image file (file png). this work with custom png
+* https://windtwebdesign.com/en/how-to-add-custom-icons-to-my-wordpress-menu-without-using-plugins/
+* 2. Add custom font icons
+* https://boldthemes.ticksy.com/article/12694/
+* ** The properties may be overwritten in the main included files
+ */
+/* Local Left arrow file */
+.devsunset-local-chevron-left {
+  content: url("../../assets/fonts/devsunset-local-chevron-left.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+/* Local right arrow file */
+.devsunset-local-chevron-right {
+  content: url("../../assets/fonts/devsunset-local-chevron-right.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-audio:before {
+  content: "\e800";
+}
+
+/* These are equivalent chevron arrow left & right
+ * - styling the chevron arrow by styling these pseudo items
+ * - Where to obtain these values ???
+ */
+.devsunset-chevron-left:before {
+  content: "\e801";
+}
+
+.devsunset-chevron-right:before {
+  content: "\e802";
+}
+
+.devsunset-close:before {
+  content: "\e803";
+}
+
+.devsunset-comment:before {
+  content: "\e804";
+}
+
+.devsunset-link:before {
+  content: "\e805";
+}
+
+.devsunset-loading:before {
+  content: "\e806";
+}
+
+.devsunset-logo:before {
+  content: "\e807";
+}
+
+.devsunset-menu:before {
+  content: "\e808";
+}
+
+.devsunset-pencil:before {
+  content: "\e809";
+}
+
+.devunset-pics:before {
+  content: "\e80a";
+}
+
+.devsunset-search:before {
+  content: "\e80b";
+}
+
+.devsunset-share:before {
+  content: "\e80c";
+}
+
+.devsunset-tag:before {
+  content: "\e80d";
+}
+
+.devsunset-video:before {
+  content: "\e80e";
+}
+
+/*
+* ==============================================
+* Self-defined fonts icons from local host
+* ==============================================
+*/
+.devsunset-twitter {
+  content: url("../../assets/icons/devsunset-twitter.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-facebook {
+  content: url("../../assets/icons/devsunset-facebook.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-google-plus {
+  content: url("../../assets/icons/devsunset-google-plus.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-clock {
+  content: url("../../assets/icons/devsunset-clock.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-comment-bubble {
+  content: url("../../assets/icons/devsunset-comment-bubble.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-edit {
+  content: url("../../assets/icons/devsunset-edit.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-delete {
+  content: url("../../assets/icons/devsunset-delete.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+/* These 2 values already start from <theme_root_dir>/assets/ */
+.devsunset-comment-white {
+  content: url("../../assets/icons/devsunset-comment-white.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-share-white {
+  content: url("../../assets/icons/devsunset-share-white.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+.devsunset-dropdown-simple {
+  content: url("../../assets/icons/devsunset-dropdown-simple.svg");
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+}
+
+/**
+*    @Package devsunsettheme
+* * Need to test the code in the actual position before import. (file devsunset.scss)
+**/
+header.devsunset-header-container, .devsunset-format-gallery .entry-content .carousel.slide a.carousel-control-next, .devsunset-format-gallery .entry-content .carousel.slide a.carousel-control-prev, .devsunset-format-gallery .entry-header, .devsunset-format-image .entry-header {
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+.devsunset-format-gallery .entry-content .carousel.slide .carousel-inner .carousel-item div.image-caption, .devsunset-format-image .entry-header div.entry-excerpt.image-caption {
+  background: black;
+  background: -moz-linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+}
+
+/**
+*    @Package devsunsettheme
+* * Need to test the code in the actual position before import. (file devsunset.scss)
+**/
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+  margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+  display: block;
+  margin: 5px auto 5px auto;
+}
+
+/*.aligncenter{
+  @include fullwidth();
+}*/
+.alignright {
+  float: right;
+  margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+  float: right;
+  margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+  margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img.aligncenter {
+  width: 100%;
+  height: auto;
+}
+
+.wp-caption {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  max-width: 96%;
+  /* Image does not overflow the content area */
+  padding: 5px 3px 10px;
+  text-align: center;
+}
+
+.wp-caption.alignnone {
+  margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+  margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+  margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+  border: 0 none;
+  height: auto;
+  margin: 0;
+  max-width: 98.5%;
+  padding: 0;
+  width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+  font-size: 11px;
+  line-height: 17px;
+  margin: 0;
+  padding: 0 4px 5px;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
+
+/*
+* ====================================================
+* Post format SECTION
+* ====================================================
+*/
+/*
+Standard post format
+----------------------------
+*/
+article {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+/* 1. The title */
+h2 {
+  font-size: 36px;
+  font-weight: 400;
+}
+h2.entry-title {
+  line-height: 1.2em;
+  margin: 2em 0 1.2em;
+  padding: 0;
+}
+h2.entry-title a {
+  text-decoration: none;
+  color: #333333;
+}
+h2.entry-title a:hover, h2.entry-title a:focus {
+  color: #000000;
+  -webkit-transition: color 300ms ease;
+  -moz-transition: color 300ms ease;
+  /* Source transition :
+  * https://css-tricks.com/almanac/properties/t/transition/
+  */
+  -ms-transition: color 300ms ease;
+  -o-transition: color 300ms ease;
+  transition: color 300ms ease;
+}
+h2:before, h2:after {
+  content: "";
+  display: inline-block;
+  position: relative;
+}
+h2:before {
+  margin-right: 0.2em;
+}
+h2:after {
+  margin-left: 0.2em;
+}
+
+/* 2. The meta data information */
+.entry-meta {
+  font-size: 16px;
+  font-weight: 300;
+  color: #898989;
+}
+.entry-meta span a {
+  text-decoration: none;
+  font-weight: 300;
+  color: #333333;
+}
+.entry-meta span a:hover, .entry-meta span a:focus {
+  font-weight: 500;
+  color: #333333;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  /* Source transition :
+  * https://css-tricks.com/almanac/properties/t/transition/
+  */
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+/* 3. Featured images */
+.standard-featured-link {
+  display: block;
+  position: relative;
+}
+.standard-featured-link:hover .standard-featured:after, .standard-featured-link:focus .standard-featured:after {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.standard-featured {
+  height: 66vh;
+  width: auto;
+  display: block;
+  position: relative;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  margin: 0 auto;
+}
+.standard-featured:after {
+  -webkit-transition: background-color 500ms ease;
+  -moz-transition: background-color 500ms ease;
+  /* Source transition :
+  * https://css-tricks.com/almanac/properties/t/transition/
+  */
+  -ms-transition: background-color 500ms ease;
+  -o-transition: background-color 500ms ease;
+  transition: background-color 500ms ease;
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.35);
+}
+
+/*
+a {
+    @include animate(all, 320ms);
+    &:hover, &:focus {
+        text-decoration: none;
+        font-weight: 500;
+        color: $dark-grey;
+    }
+}*/
+/* 4. The post excerpt */
+.entry-excerpt {
+  margin: 1.2em 0 0.8em;
+}
+.entry-excerpt p {
+  font-size: 18px;
+  line-height: 1.5em;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+/* 5. "Read more" button */
+.button-container {
+  margin-bottom: 1.2em;
+}
+
+.btn-devsunset {
+  -webkit-transition: all 320ms ease;
+  -moz-transition: all 320ms ease;
+  /* Source transition :
+  * https://css-tricks.com/almanac/properties/t/transition/
+  */
+  -ms-transition: all 320ms ease;
+  -o-transition: all 320ms ease;
+  transition: all 320ms ease;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 300;
+  color: #898989;
+  padding: 8px 12px;
+  border-radius: 0;
+  border: 1px solid #898989;
+  background-color: transparent;
+}
+.btn-devsunset:hover, .btn-devsunset:focus {
+  color: #ffffff;
+  border-color: #333333;
+  background-color: #333333;
+}
+
+/* 6. Footers: tags & comments */
+.entry-footer {
+  padding: 0.4em 0.2em;
+  color: #898989;
+  border-bottom: 4px solid #F1F1F1;
+}
+.entry-footer a {
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  /* Source transition :
+  * https://css-tricks.com/almanac/properties/t/transition/
+  */
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+  text-decoration: none;
+  color: #898989;
+  display: inline-block;
+  font-size: 12px;
+}
+.entry-footer a:hover, .entry-footer a:focus {
+  color: #333333;
+}
+.entry-footer .tags-list .devsunset-icon {
+  margin-right: 0.5em;
+}
+.entry-footer .tags-list a {
+  padding: 0 0.5em;
+}
+
+.comments-link .devsunset-icon {
+  margin-left: 0.5em;
+}
+
+/*
+Image post format
+----------------------------
+*/
+.devsunset-format-image .entry-header {
+  position: relative;
+  z-index: 5;
+  height: 70vh;
+  margin: 2em auto;
+}
+.devsunset-format-image .entry-header div.entry-excerpt.image-caption {
+  /* 1. The outer container */
+  position: absolute;
+  z-index: 6;
+  margin: 0;
+  display: block;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* 2. The textual content */
+}
+.devsunset-format-image .entry-header div.entry-excerpt.image-caption p {
+  margin: 0.5em;
+  z-index: 10;
+}
+.devsunset-format-image h2 a, .devsunset-format-image .entry-header a, .devsunset-format-image .entry-meta a {
+  color: #ffffff;
+}
+.devsunset-format-image h2 {
+  margin-top: 10px;
+}
+.devsunset-format-image h2 a {
+  padding-top: 0.5em;
+}
+.devsunset-format-image .entry-excerpt {
+  /* &.image-caption{
+     position:absolute;
+
+   }*/
+}
+.devsunset-format-image .entry-excerpt p {
+  color: #ffffff;
+  text-align: left;
+}
+
+/*
+Audio post format
+----------------------------
+*/
+.devsunset-format-audio header h2.entry-title {
+  text-align: left;
+  margin: 1em 1em 0 auto;
+}
+.devsunset-format-audio header h2.entry-title:before, .devsunset-format-audio header h2.entry-title:after {
+  display: none;
+}
+.devsunset-format-audio header div.entry-meta {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.devsunset-format-audio header div.entry-meta span {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+.devsunset-format-audio .entry-content iframe {
+  width: 100%;
+  height: 20vh;
+}
+
+/*
+Video post format
+----------------------------
+*/
+.devsunset-format-video header h2.entry-title {
+  margin-top: 0.6em;
+}
+
+/*
+Gallery post format
+----------------------------
+*/
+.devsunset-format-gallery .entry-header {
+  position: relative;
+  z-index: 5;
+  margin: 2em auto;
+}
+.devsunset-format-gallery h2 a, .devsunset-format-gallery .entry-header a, .devsunset-format-gallery .entry-meta a {
+  color: #898989;
+  -webkit-transition: color 300ms ease;
+  -moz-transition: color 300ms ease;
+  /* Source transition :
+  * https://css-tricks.com/almanac/properties/t/transition/
+  */
+  -ms-transition: color 300ms ease;
+  -o-transition: color 300ms ease;
+  transition: color 300ms ease;
+}
+.devsunset-format-gallery h2 {
+  margin-top: 10px;
+}
+.devsunset-format-gallery h2 a {
+  padding-top: 0.5em;
+}
+.devsunset-format-gallery .entry-content .carousel.slide {
+  height: 50vh;
+  width: 60vw;
+  margin: 1em auto;
+}
+.devsunset-format-gallery .entry-content .carousel.slide .carousel-inner .carousel-item {
+  height: 50vh;
+  width: 60vw;
+  overflow: hidden;
+  position: relative;
+  /*&:hover{
+
+    div.image-caption{
+      @include animate(transform, 320ms);
+      @include transform(translateY(0%));
+    }
+
+  }//.carousel-item:hover*/
+}
+.devsunset-format-gallery .entry-content .carousel.slide .carousel-inner .carousel-item.background-image:after {
+  background-color: transparent;
+}
+.devsunset-format-gallery .entry-content .carousel.slide .carousel-inner .carousel-item div.image-caption {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  position: absolute;
+  -webkit-transition: transform 320ms ease;
+  -moz-transition: transform 320ms ease;
+  /* Source transition :
+  * https://css-tricks.com/almanac/properties/t/transition/
+  */
+  -ms-transition: transform 320ms ease;
+  -o-transition: transform 320ms ease;
+  transition: transform 320ms ease;
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%);
+}
+.devsunset-format-gallery .entry-content .carousel.slide .carousel-inner .carousel-item div.image-caption p {
+  color: #fff;
+  text-shadow: 1px 2px black;
+  font-size: 1.1em;
+  margin: 0.5em 1em;
+}
+.devsunset-format-gallery .entry-content .carousel.slide a {
+  /* Generic styling for both left & right arrow */
+  /*&:hover, &:focus{
+    .preview-container{
+      .thumbnail-container{
+        @include transform(scale(1));
+      }
+    }*/
+}
+.devsunset-format-gallery .entry-content .carousel.slide a.carousel-control-next, .devsunset-format-gallery .entry-content .carousel.slide a.carousel-control-prev {
+  background: none;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  font-size: 32px;
+  width: auto;
+  text-decoration: none;
+}
+.devsunset-format-gallery .entry-content .carousel.slide a.carousel-control-next:hover div.preview-container, .devsunset-format-gallery .entry-content .carousel.slide a.carousel-control-prev:hover div.preview-container {
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-transition: background-color 320ms ease;
+  -moz-transition: background-color 320ms ease;
+  /* Source transition :
+  * https://css-tricks.com/almanac/properties/t/transition/
+  */
+  -ms-transition: background-color 320ms ease;
+  -o-transition: background-color 320ms ease;
+  transition: background-color 320ms ease;
+}
+.devsunset-format-gallery .entry-content .carousel.slide a.carousel-control-next:hover div.preview-container span.thumbnail-container, .devsunset-format-gallery .entry-content .carousel.slide a.carousel-control-prev:hover div.preview-container span.thumbnail-container {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+.devsunset-format-gallery .entry-content .carousel.slide a div.preview-container {
+  padding: 0.5em;
+  background-color: rgba(0, 0, 0, 0);
+  line-height: 0;
+  -webkit-transition: background-color 320ms ease;
+  -moz-transition: background-color 320ms ease;
+  /* Source transition :
+  * https://css-tricks.com/almanac/properties/t/transition/
+  */
+  -ms-transition: background-color 320ms ease;
+  -o-transition: background-color 320ms ease;
+  transition: background-color 320ms ease;
+}
+.devsunset-format-gallery .entry-content .carousel.slide a div.preview-container span.thumbnail-container {
+  position: absolute;
+  display: block;
+  height: 2.5em;
+  width: 2.5em;
+  border-radius: 50%;
+  background: #999;
+  -webkit-transition: transform 320ms ease;
+  -moz-transition: transform 320ms ease;
+  /* Source transition :
+  * https://css-tricks.com/almanac/properties/t/transition/
+  */
+  -ms-transition: transform 320ms ease;
+  -o-transition: transform 320ms ease;
+  transition: transform 320ms ease;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+}
+.devsunset-format-gallery .entry-content .carousel.slide a div.preview-container span.devsunset-icon {
+  color: #ffffff;
+}
+.devsunset-format-gallery .entry-content .carousel.slide a.left div.table div.table-cell div.preview-container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-start;
+  padding-right: 2.4em;
+  border-radius: 0 45% 45% 0;
+}
+.devsunset-format-gallery .entry-content .carousel.slide a.left div.table div.table-cell div.preview-container span.thumbnail-container {
+  left: 1.25em;
+}
+.devsunset-format-gallery .entry-content .carousel.slide a.left div.table div.table-cell div.preview-container span.devsunset-icon {
+  color: #ffffff;
+  margin-left: 0;
+  padding-left: 0;
+}
+.devsunset-format-gallery .entry-content .carousel.slide a.right div.table div.table-cell div.preview-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding-left: 2em;
+  border-radius: 45% 0 0 45%;
+}
+.devsunset-format-gallery .entry-content .carousel.slide a.right div.table div.table-cell div.preview-container span.thumbnail-container {
+  right: 1.2em;
+}
+.devsunset-format-gallery .entry-content .carousel.slide a.right div.table div.table-cell div.preview-container span.devsunset-icon {
+  color: #ffffff;
+  margin-right: 0;
+  padding-right: 0;
+}
+.devsunset-format-gallery:hover .entry-content .carousel.slide .carousel-inner .carousel-item div.image-caption {
+  -webkit-transition: transform 320ms ease;
+  -moz-transition: transform 320ms ease;
+  /* Source transition :
+  * https://css-tricks.com/almanac/properties/t/transition/
+  */
+  -ms-transition: transform 320ms ease;
+  -o-transition: transform 320ms ease;
+  transition: transform 320ms ease;
+  -webkit-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  -o-transform: translateY(0%);
+  transform: translateY(0%);
+}
+
+/*
+Quote post format
+----------------------------
+*/
+.devsunset-format-quote .quote-content {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  font-size: 1.5em;
+  font-weight: 200;
+  line-height: 1.2em;
+  letter-spacing: 0.03em;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  left: 0;
+  right: 0;
+}
+.devsunset-format-quote .quote-content:before {
+  content: '"';
+  display: inline-block;
+  position: relative;
+  color: #ccc;
+}
+.devsunset-format-quote .quote-content:after {
+  content: '"';
+  display: inline-block;
+  position: relative;
+  color: #ccc;
+}
+.devsunset-format-quote .quote-content a {
+  text-decoration: none;
+  color: #333333;
+  text-shadow: 1px 1px black;
+}
+.devsunset-format-quote .quote-author {
+  color: #898989;
+}
+
+/*
+Link post format
+----------------------------
+*/
+.devsunset-format-link header.entry-header h2.entry-title:before, .devsunset-format-link header.entry-header h2.entry-title:after {
+  display: none;
+}
+.devsunset-format-link header.entry-header h2.entry-title a {
+  display: block;
+}
+.devsunset-format-link header.entry-header h2.entry-title .link-icon {
+  display: table;
+  color: #fff;
+  font-size: 32px;
+  width: 1.5em;
+  height: 1.5em;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.devsunset-format-link header.entry-header h2.entry-title .link-icon span.devsunset-icon {
+  display: table-row;
+  margin: 0;
+  position: relative;
+}
+.devsunset-format-link header.entry-header h2.entry-title .link-icon span.devsunset-icon:before {
+  position: absolute;
+  top: 0.3em;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/*
+Aside post format
+----------------------------
+*/
+.devsunset-format-aside {
+  /* Max SM width = 767 px according to Bootstrap 5.1 grid documents
+  */
+}
+.devsunset-format-aside .aside-container {
+  background-color: rgba(0, 0, 0, 0.08);
+  padding-top: 0.8em;
+}
+.devsunset-format-aside .aside-container div.row div.col-xs-2.col-md-2.col-sm-3 a {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+}
+.devsunset-format-aside .aside-featured {
+  margin: 0 auto;
+  border-radius: 50%;
+}
+@media (max-width: 767px) {
+  .devsunset-format-aside .aside-featured {
+    width: 8em;
+    height: 8em;
+  }
+}
+@media (min-width: 768px) {
+  .devsunset-format-aside .aside-featured {
+    width: 12vw;
+    height: 12vw;
+  }
+}
+.devsunset-format-aside .entry-content .entry-excerpt {
+  margin-top: 0;
+  margin-bottom: 0.2em;
+}
+.devsunset-format-aside .entry-content .entry-excerpt p {
+  font-size: 0.9em;
+}
+.devsunset-format-aside .row-entry-footer {
+  margin: 0;
+  border-bottom: none;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.devsunset-format-aside .row-entry-footer .entry-footer {
+  border-bottom: none;
+}
+
+/**
+*    @Package Devsunsettheme
+*
+*  - Generic custom CSS for the Devsunset theme
+**/
+.devsunset-contact-form {
+  padding: 2em 0;
+  margin: 0 auto;
+}
+.devsunset-contact-form .form-group {
+  margin: 1.2em auto;
+  max-width: 32em;
+  position: relative;
+}
+.devsunset-contact-form .form-group:before {
+  position: absolute;
+  display: block;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #cbcbcb;
+}
+.devsunset-contact-form .devsunset-form-control {
+  border: none;
+  border-radius: 0;
+  padding: 0.2em 0.6em;
+  outline: none;
+  box-shadow: none;
+  /* Create pseudo elements for different type of browsers: */
+  /***
+  * For microsoft explorer & belows .
+  * - Bootstrap 5 does not support IE
+  */
+  /* &:-ms-placeholder {
+     text-transform: uppercase;
+   }*/
+}
+.devsunset-contact-form .devsunset-form-control::-webkit-input-placeholder {
+  text-transform: uppercase;
+}
+.devsunset-contact-form .devsunset-form-control::-moz-placeholder {
+  text-transform: uppercase;
+}
+.devsunset-contact-form .devsunset-form-control:-moz-placeholder {
+  text-transform: uppercase;
+}
+.devsunset-contact-form .devsunset-form-control:hover, .devsunset-contact-form .devsunset-form-control:focus, .devsunset-contact-form .devsunset-form-control:active {
+  box-shadow: none;
+}
+.devsunset-contact-form .response-message {
+  margin-bottom: 1.2em;
+}
+
+#devsunsetContactForm div.response-message {
+  /*span.success-response, span.failure-response{
+    display:none;
+  }*/
+}
+#devsunsetContactForm div.response-message .form-control-message {
+  display: none;
+}
+#devsunsetContactForm div.response-message .success-status {
+  display: block;
+  color: green;
+  font-weight: 400;
+}
+#devsunsetContactForm div.response-message .failure-status {
+  display: block;
+  color: orangered;
+  font-weight: 400;
+}
+#devsunsetContactForm div.response-message .in-progress-status {
+  display: block;
+  color: #bababa;
+  font-weight: 300;
+}
+#devsunsetContactForm div.devsunset-button-submit-form .button-form-submission {
+  background-color: #656565;
+  border-radius: 2px;
+  font-size: 24px;
+  padding: 0.6em 1.6em;
+  color: #fff;
+  font-weight: 100;
+}
+
+/*
+* -------------------------
+* GENERIC
+* ---------------------------
+*/
+body {
+  /* Primary font: Raleway ; Secondary font: the remaining ... */
+  font-family: "Raleway", "Helvetica Neue", "Helvetica", Ariial, Verdana, sans-serif;
+}
+body.no-scroll {
+  overflow-y: hidden;
+}
+
+.background-image {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.table {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.table .table-cell {
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+
+div.pagination {
+  align-items: center;
+  justify-content: center;
+}
+div.pagination span {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+div.pagination a {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/*a {
+    @include animate(all, 320ms);
+    &:hover, &:focus {
+        text-decoration: none;
+        font-weight: 500;
+        color: $dark-grey;
+    }
+}*/
+/*
+.posted-in a {
+    text-decoration: none;
+}
+*/
+/*
+* -------------------------
+* HEADER SECTION
+* ---------------------------
+*/
+/*div.container{
+  padding-left:0;
+  padding-right:0;
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
+  z-index: 1;
+
+  div.row{
+    padding-left:0;
+    padding-right:0;
+    margin-left: 0;
+    margin-right: 0;
+
+    div.column-xs-12{
+      padding-left:0;
+      padding-right:0;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}*/
+div.devsunset-header {
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  z-index: 1;
+}
+
+header.devsunset-header-container {
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
+  z-index: 9;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  height: 20em;
+}
+header.devsunset-header-container div.header-content {
+  position: relative;
+  z-index: 10;
+}
+header.devsunset-header-container div.header-content div.table-cell {
+  padding-bottom: 2em;
+  margin-bottom: 2em;
+}
+header.devsunset-header-container div.nav-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 11;
+  background-color: rgba(255, 255, 255, 0.2);
+  align-self: stretch;
+}
+header.devsunset-header-container div.nav-container #menu-main-nav-menu-1-vn {
+  display: block;
+}
+
+.site-title {
+  color: #fff;
+  margin: 0;
+  text-align: center;
+  font-size: 6em;
+}
+
+.site-description {
+  color: #fff;
+  font-size: 16px;
+  margin-top: 1em;
+}
+
+/*
+* -------------------------
+* NAV MENU SECTION
+* ---------------------------
+*/
+/*
+// OK
+li.menu-item:hover {
+    background-color:white;
+    opacity: 0.9;
+}
+*/
+/** Comprehensive menu item */
+/*
+----------------------------
+Footer section
+----------------------------
+*/
+.devsunset-footer {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0.5em 0;
+  margin-top: 2em;
+  display: block;
+}
+
+/*
+----------------------------
+AJAX Loading option
+----------------------------
+*/
+.container-load-previous {
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.devsunset-posts-container {
+  padding-top: 2em;
+}
+.devsunset-posts-container article {
+  -webkit-transition: all 350ms ease;
+  -moz-transition: all 350ms ease;
+  /* Source transition :
+  * https://css-tricks.com/almanac/properties/t/transition/
+  */
+  -ms-transition: all 350ms ease;
+  -o-transition: all 350ms ease;
+  transition: all 350ms ease;
+  -webkit-transform: translateY(4em);
+  -moz-transform: translateY(4em);
+  -ms-transform: translateY(4em);
+  -o-transform: translateY(4em);
+  transform: translateY(4em);
+  opacity: 0;
+}
+.devsunset-posts-container article.reveal {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.btn-devsunset-load {
+  text-decoration: none;
+  display: block;
+  width: 15em;
+  color: #222;
+  margin: 1em auto;
+  font-size: 1.6em;
+  cursor: pointer;
+  opacity: 0.5;
+  -webkit-transition: opacity 350ms ease;
+  -moz-transition: opacity 350ms ease;
+  /* Source transition :
+  * https://css-tricks.com/almanac/properties/t/transition/
+  */
+  -ms-transition: opacity 350ms ease;
+  -o-transition: opacity 350ms ease;
+  transition: opacity 350ms ease;
+}
+.btn-devsunset-load:hover, .btn-devsunset-load:focus, .btn-devsunset-load.loading {
+  opacity: 1;
+  -webkit-transition: opacity 350ms ease;
+  -moz-transition: opacity 350ms ease;
+  /* Source transition :
+  * https://css-tricks.com/almanac/properties/t/transition/
+  */
+  -ms-transition: opacity 350ms ease;
+  -o-transition: opacity 350ms ease;
+  transition: opacity 350ms ease;
+}
+.btn-devsunset-load.loading {
+  cursor: default;
+}
+.btn-devsunset-load span {
+  display: block;
+}
+
+.spin {
+  animation-name: spin;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+/**
+*=============================================================
+* Single post format
+* - Specified by class .devsunset-single-post-container
+*=============================================================
+**/
+.devsunset-single-post-container {
+  /* Post comments */
+  /*
+  =========================
+  Post comment section
+  =========================
+  */
+}
+.devsunset-single-post-container .entry-content {
+  margin-top: 1em;
+  font-weight: 350;
+  letter-spacing: 0.02em;
+  line-height: 1.8em;
+}
+.devsunset-single-post-container .entry-content p {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  margin-bottom: 0.75em;
+  padding: 0.25em 0.5em;
+}
+.devsunset-single-post-container .entry-content b, .devsunset-single-post-container .entry-content strong {
+  font-weight: 500;
+}
+.devsunset-single-post-container .entry-content a {
+  color: darkblue;
+}
+.devsunset-single-post-container .entry-content a:hover, .devsunset-single-post-container .entry-content a:focus {
+  color: green;
+}
+.devsunset-single-post-container .entry-content .devsunset-tooltip {
+  cursor: pointer;
+  color: #F56B08;
+}
+.devsunset-single-post-container .entry-content .devsunset-tooltip:hover, .devsunset-single-post-container .entry-content .devsunset-tooltip:focus {
+  font-weight: 500;
+  color: green;
+}
+.devsunset-single-post-container .entry-content .devsunset-popover {
+  cursor: pointer;
+  color: #F56B08;
+}
+.devsunset-single-post-container .entry-content .devsunset-popover:hover, .devsunset-single-post-container .entry-content .devsunset-popover:focus {
+  font-weight: 500;
+  color: green;
+}
+.devsunset-single-post-container .devsunset-custom-post-navigation div.post-link-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+.devsunset-single-post-container .devsunset-custom-post-navigation div.post-link-nav a {
+  padding: 0 0.1em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.devsunset-single-post-container .devsunset-custom-post-navigation div.post-link-nav span.devsunset-icon:before {
+  font-size: 1em;
+}
+.devsunset-single-post-container .devsunset-share-this h4 {
+  margin: 0.5em auto;
+  padding: 0.2em;
+}
+.devsunset-single-post-container .devsunset-share-this ul {
+  margin: 0.5em auto;
+  padding: 0.2em;
+}
+.devsunset-single-post-container .devsunset-share-this ul li {
+  display: inline-block;
+}
+.devsunset-single-post-container .devsunset-share-this ul li a span.devsunset-icon {
+  width: 2em;
+  height: 2em;
+  color: darkblue;
+  margin: 0 2px;
+}
+.devsunset-single-post-container .devsunset-share-this ul li::marker {
+  content: "";
+}
+.devsunset-single-post-container ol.comment-list {
+  list-style: none;
+}
+.devsunset-single-post-container ol.comment-list ol.children {
+  list-style: none;
+}
+.devsunset-single-post-container article.comment-body footer.comment-meta .comment-author.vcard {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.devsunset-single-post-container article.comment-body footer.comment-meta .comment-author.vcard img.avatar.avatar-32 {
+  border-radius: 50%;
+}
+.devsunset-single-post-container article.comment-body div.comment-content {
+  border-bottom: 2px solid grey;
+}
+.devsunset-single-post-container article.comment-body div.reply {
+  text-align: right;
+}
+.devsunset-single-post-container article.comment-body div.reply a.comment-reply-link {
+  text-decoration: none;
+  cursor: pointer;
+  color: #F56B08;
+}
+.devsunset-single-post-container article.comment-body div.reply a.comment-reply-link:hover, .devsunset-single-post-container article.comment-body div.reply a.comment-reply-link:focus {
+  font-weight: 500;
+  color: green;
+}
+
+/*# sourceMappingURL=devsunset.css.map */
