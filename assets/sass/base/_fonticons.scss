@@ -1,0 +1,228 @@
+/**
+*    @Package devsunsettheme
+* * Need to test the code in the actual position before import. (file devsunset.scss)
+**/
+
+/*
+	Devsunset Font Icon
+	------------------------------------------------
+	- Define the custom devsunset Font here
+	- These code are actually called in devsunset.scss => ignore warning
+*/
+
+@font-face {
+ font-family: 'devsunset-icon';
+ src:    url('../../assets/fonts/devsunset-icon.eot?dxcjr7');
+ src:    url('../../assets/fonts/devsunset-icon.eot?dxcjr7#iefix') format('embedded-opentype'),
+ url('../../assets/fonts/devsunset-icon.ttf?dxcjr7') format('truetype'),
+ url('../../assets/fonts/devsunset-icon.woff?dxcjr7') format('woff'),
+ url('../../assets/fonts/devsunset-icon.svg?dxcjr7#sunset-icon') format('svg');
+ font-weight: normal;
+ font-style: normal;
+}
+
+.devsunset-icon {
+ font-family: 'devsunset-icon' !important;
+ speak: none;
+ font-style: normal;
+ font-weight: normal;
+ font-variant: normal;
+ text-transform: none;
+ line-height: 1;
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+}
+
+/* Assign classname to custom .svg file
+ *1. Assign class name to custom image file (file png). this work with custom png
+* https://windtwebdesign.com/en/how-to-add-custom-icons-to-my-wordpress-menu-without-using-plugins/
+* 2. Add custom font icons
+* https://boldthemes.ticksy.com/article/12694/
+* ** The properties may be overwritten in the main included files
+ */
+/* Local Left arrow file */
+.devsunset-local-chevron-left{
+ //noinspection CssUnknownTarget
+ content: url('../../assets/fonts/devsunset-local-chevron-left.svg');
+ width: 2em; // 32px is OK
+ height: 2em;
+ background-color:transparent;
+ //color: #ffffff;
+}
+
+/* Local right arrow file */
+.devsunset-local-chevron-right{
+ //noinspection CssUnknownTarget
+ content: url('../../assets/fonts/devsunset-local-chevron-right.svg');
+ width: 2em;
+ height: 2em;
+ background-color:transparent;
+ //color: #ffffff;
+}
+
+
+.devsunset-audio:before {
+ content: "\e800";
+}
+
+/* These are equivalent chevron arrow left & right
+ * - styling the chevron arrow by styling these pseudo items
+ * - Where to obtain these values ???
+ */
+.devsunset-chevron-left:before {
+ content: "\e801";
+}
+
+.devsunset-chevron-right:before {
+ content: "\e802";
+}
+
+.devsunset-close:before {
+ content: "\e803";
+}
+
+.devsunset-comment:before {
+ content: "\e804";
+}
+
+.devsunset-link:before {
+ content: "\e805";
+}
+
+.devsunset-loading:before {
+ content: "\e806";
+}
+.devsunset-logo:before {
+ content: "\e807";
+}
+
+.devsunset-menu:before {
+ content: "\e808";
+}
+
+.devsunset-pencil:before {
+ content: "\e809";
+}
+
+.devunset-pics:before {
+ content: "\e80a";
+}
+
+.devsunset-search:before {
+ content: "\e80b";
+}
+
+.devsunset-share:before {
+ content: "\e80c";
+}
+
+.devsunset-tag:before {
+ content: "\e80d";
+}
+
+.devsunset-video:before {
+ content: "\e80e";
+}
+
+/*
+* ==============================================
+* Self-defined fonts icons from local host
+* ==============================================
+*/
+
+.devsunset-twitter{
+ //noinspection CssUnknownTarget
+ content: url('../../assets/icons/devsunset-twitter.svg');
+ width: 2em;
+ height: 2em;
+ background-color:transparent;
+ //color: #ffffff;
+ //text-shadow: 1px 1px black;
+}
+
+.devsunset-facebook{
+ //noinspection CssUnknownTarget
+ content: url('../../assets/icons/devsunset-facebook.svg');
+ width: 2em;
+ height: 2em;
+ background-color:transparent;
+ //color: #ffffff;
+ //text-shadow: 1px 1px black;
+}
+
+.devsunset-google-plus{
+ //noinspection CssUnknownTarget
+ content: url('../../assets/icons/devsunset-google-plus.svg');
+ width: 2em;
+ height: 2em;
+ background-color:transparent;
+ //color: #ffffff;
+ //text-shadow: 1px 1px black;
+}
+
+.devsunset-clock{
+ //noinspection CssUnknownTarget
+ content: url('../../assets/icons/devsunset-clock.svg');
+ width: 2em;
+ height: 2em;
+ background-color:transparent;
+ //color: #ffffff;
+}
+
+.devsunset-comment-bubble{
+ //noinspection CssUnknownTarget
+ content: url('../../assets/icons/devsunset-comment-bubble.svg');
+ width: 2em;
+ height: 2em;
+ background-color:transparent;
+ //color: #ffffff;
+}
+
+.devsunset-edit{
+ //noinspection CssUnknownTarget
+ content: url('../../assets/icons/devsunset-edit.svg');
+ width: 2em;
+ height: 2em;
+ background-color:transparent;
+ //color: #ffffff;
+}
+
+.devsunset-delete{
+ //noinspection CssUnknownTarget
+ content: url('../../assets/icons/devsunset-delete.svg');
+ width: 2em;
+ height: 2em;
+ background-color:transparent;
+ //color: #ffffff;
+}
+
+/* These 2 values already start from <theme_root_dir>/assets/ */
+// Icons
+.devsunset-comment-white {
+ //noinspection CssUnknownTarget
+ // content: url('../../assets/icons/devsunset-comment-white.svg');
+ content: url('../../assets/icons/devsunset-comment-white.svg');
+ width: 2em;
+ height: 2em;
+ background-color: transparent;
+ //color: #ffffff;
+}
+
+
+.devsunset-share-white{
+ //noinspection CssUnknownTarget
+ content: url('../../assets/icons/devsunset-share-white.svg');
+ width: 2em;
+ height: 2em;
+ background-color:transparent;
+ //color: #ffffff;
+}
+
+.devsunset-dropdown-simple{
+ //noinspection CssUnknownTarget
+ content: url('../../assets/icons/devsunset-dropdown-simple.svg');
+ width: 2em;
+ height: 2em;
+ background-color:transparent;
+ //color: #ffffff;
+}

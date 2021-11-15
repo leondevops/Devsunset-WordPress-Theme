@@ -1,0 +1,143 @@
+/**
+*    @Package devsunsettheme
+*
+*  - Generic custom CSS for the Devsunset theme
+**/
+
+
+/**
+ *  1. Devsunset header navigation menu section
+ *-----------------------------
+ **/
+
+div.devsunset-header-navigation-menu{
+
+  .devsunset-main-nav-menu{
+    display: inline-block;
+    text-align: center;
+    border: none;
+    margin: 0 1em;
+    padding: 0 1em;
+
+  ul.nav.navbar-nav{
+    display: inline-block;
+  }
+
+  // Generic list (container of a list item)
+  ul.dropdown-menu.show {
+
+    position: absolute;
+    border: 1px solid $light-grey;
+    top: 0;
+    min-width: auto;
+    padding-top:0;
+    padding-bottom:0;
+
+    display: flex;
+    flex-direction:column;
+    background-color: rgba(0,0,0, 0.8);
+    @include animate(all, 350ms);
+  }//.ul.dropdown-menu.show
+
+// List item which has children
+   li.menu-item-has-children.dropdown-submenu{
+
+     padding-left: 0;
+
+a, ul{
+  padding-left:0;
+}
+}//li
+
+     /* General menu item.
+     * increase size by padding top/bottom to keep hover effects */
+   li.menu-item{
+     padding: 0.25em 0.25em;
+     margin: 0 0.25em;
+     float: none;
+     display: inline-block;
+
+&.show{
+a{
+  opacity: 1;
+  @include transform( translateY(0) );
+  @include animate(all, 350ms);
+}
+
+}//.show
+
+
+// Text properties of Menu item
+   a{
+     text-transform: uppercase;
+     color: #fff;
+     text-shadow: black 1px 1px;
+     opacity: 0.8;
+     letter-spacing: 0.05em;
+     background: none;
+     @include animate( opacity, 320);
+&:hover, &:focus, &:visited {
+                     color: white;       // text color whiter
+                   font-weight: bold;
+                     background: none;       // resolve some button have hover issues
+                   // background-color: $menuBackgroundActive;
+                     opacity: 1;
+&:after{
+   @include transform( translateY(0) );
+   opacity: 1;
+ }
+@include animate(all, 350ms);
+}
+// Underline the Menu item. Not good as tutorial
+        &:after {
+     content:'';
+   // position: absolute;
+     display:block;
+     align-self: stretch;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     height: 1px;
+     background: #fff;
+     @include animate(all, 500ms);
+     opacity: 0;
+     @include transform( translateY(-0.9em) );
+   }
+} // End of a text properties
+
+}//End of li menu item
+
+// Format the arrow of dropdown list
+   .dropdown-toggle::after{
+   //display: block;
+   // visibility: hidden;
+     border-top: 0;
+     border-bottom:0;
+     margin: 0;
+     padding: 0;
+     align-self: stretch;
+   }
+
+}//.devsunset-main-nav-menu
+
+}//div.devsunset-header-navigation-menu
+
+/**
+ * 2. Sidebar Menu section
+ *-----------------------------
+ **/
+
+.devsunset-sidebar-menu{
+  top: 1em;
+  left: 1em;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+
+  ul.dropdown-menu{
+    background-color: #1f1f1f;
+    position: relative;
+    transform: none;
+  }
+
+}

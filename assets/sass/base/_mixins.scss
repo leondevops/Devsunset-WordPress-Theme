@@ -1,0 +1,48 @@
+/**
+*    @Package devsunsettheme
+* * Need to test the code in the actual position before import. (file devsunset.scss)
+**/
+
+/*
+	Devsunset Mixins
+	------------------------------------------------
+*/
+
+@mixin animate( $attr, $time) {
+ -webkit-transition: $attr $time ease;
+ -moz-transition: $attr $time ease;
+ /* Source transition :
+ * https://css-tricks.com/almanac/properties/t/transition/
+ */
+ -ms-transition: $attr $time ease;
+ -o-transition: $attr $time ease;
+ transition: $attr $time ease;
+}
+
+@mixin transform($var){
+ -webkit-transform: $var;
+ -moz-transform:  $var;
+ -ms-transform:  $var;
+ -o-transform:  $var;
+ transform: $var;
+}
+
+@mixin fullwidth(){
+ width: 100%;
+ height: auto;
+}
+@keyframes spin{
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes clockwiseSpin{
+ from { transform: rotate(0deg); }
+ to { transform: rotate(360deg); }
+}
+
+@keyframes counterclockwiseSpin{
+ from { transform: rotate(360deg); }
+ to { transform: rotate(0deg); }
+}
+

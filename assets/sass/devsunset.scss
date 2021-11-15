@@ -1,0 +1,483 @@
+/**
+*    @Package Devsunsettheme
+*
+*  - Generic custom CSS for the Devsunset theme
+**/
+
+/*
+Import
+---------------
+*/
+@import 'admin/base';
+
+@import 'base/variables';   // Devsunset variables
+@import 'base/mixins';      // Devsunset mixins
+@import 'base/fonticons';   // Devsunset font icons
+@import 'base/placeholders';   // Devsunset text shadow
+@import 'base/wordpress';   // WordPress style
+
+/* Front-end display*/
+@import 'frontend/menu';      // Header navigation menu
+@import 'frontend/sidebar';      //frontend sidebar / custom widgets
+@import 'frontend/post';  // Post format
+@import 'frontend/contactform';
+/*
+* -------------------------
+* GENERIC
+* ---------------------------
+*/
+body{
+  /* Primary font: Raleway ; Secondary font: the remaining ... */
+  font-family: 'Raleway', 'Helvetica Neue', 'Helvetica', Ariial ,Verdana, sans-serif;
+
+  &.no-scroll{
+    // Prevent users from scrolling horizontally
+    overflow-y: hidden;
+  }
+}
+
+.background-image{
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.table {
+  display: table;
+  width: 100%;
+  height: 100%;
+
+  .table-cell {
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+  }
+}
+
+div.pagination{
+  // display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  a {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+// This is from tutorial. Not work
+/*a {
+    @include animate(all, 320ms);
+    &:hover, &:focus {
+        text-decoration: none;
+        font-weight: 500;
+        color: $dark-grey;
+    }
+}*/
+
+/*
+.posted-in a {
+    text-decoration: none;
+}
+*/
+
+/*
+* -------------------------
+* HEADER SECTION
+* ---------------------------
+*/
+
+/*div.container{
+  padding-left:0;
+  padding-right:0;
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
+  z-index: 1;
+
+  div.row{
+    padding-left:0;
+    padding-right:0;
+    margin-left: 0;
+    margin-right: 0;
+
+    div.column-xs-12{
+      padding-left:0;
+      padding-right:0;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}*/
+div.devsunset-header{
+  top:0;
+  left:0;
+  right:0;
+  // width: 100vw;
+  padding-top:0;
+  padding-left:0;
+  padding-right:0;
+  margin-top:0;
+  margin-left: 0;
+  margin-right: 0;
+  z-index: 1;
+
+}//div.devsunset-header
+
+
+
+header.devsunset-header-container {
+  top:0;
+  left:0;
+  right:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+  margin-top:0;
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
+  z-index: 9;
+  width:100%;
+  // height: 100%;
+
+  //display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  //height: 326px;
+  height: 20em;
+  @extend %text-shadow-effect;
+  // text-shadow: 0 2px 3px rgba(0,0,0,0.4);//OK
+  // Use Z-index to align with Nav Menu
+
+
+  div.header-content {
+    position: relative;
+    z-index: 10;
+
+    div.table-cell{
+      //padding-top:1em;
+      padding-bottom:2em;
+      margin-bottom:2em;
+    }
+  }
+
+  div.nav-container {
+    position: absolute;
+    // Full size bottom
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 11;
+    background-color: $menuBackgroundActive;    // background color with overlay
+    align-self: stretch;
+
+    #menu-main-nav-menu-1-vn{
+      display: block;
+    }
+  }
+
+
+}
+
+.site-title{
+  color: #fff;
+  margin: 0;
+  text-align: center;
+  font-size: 6em;
+}
+
+.site-description{
+  color: #fff;
+  font-size: 16px;
+  margin-top: 1em;
+}
+
+
+/*
+* -------------------------
+* NAV MENU SECTION
+* ---------------------------
+*/
+
+
+/*
+// OK
+li.menu-item:hover {
+    background-color:white;
+    opacity: 0.9;
+}
+*/
+
+
+
+
+/** Comprehensive menu item */
+
+
+/*
+----------------------------
+Footer section
+----------------------------
+*/
+
+.devsunset-footer{
+  background-color: rgba(0,0,0,0.3);
+  padding: 0.5em 0;
+  margin-top: 2em;
+  display:block;
+}
+
+/*
+----------------------------
+AJAX Loading option
+----------------------------
+*/
+
+// Load previous button
+.container-load-previous{
+  margin-top: 2em;
+  margin-bottom: 1em;
+
+
+}
+
+.devsunset-posts-container{
+
+  padding-top:2em;
+
+  article{
+    @include animate(all, 350ms);
+    @include transform(translateY(4em));
+    opacity: 0;
+
+    &.reveal {
+      @include transform(translateY(0));
+      opacity: 1;
+    }
+  }
+}
+
+
+.container-load-next{
+
+}
+
+.btn-devsunset-load{
+  text-decoration: none;
+  display: block;
+  width: 15em;
+  color: #222;
+  margin: 1em auto;
+  font-size: 1.6em;
+  cursor: pointer;
+  opacity: 0.5;
+  @include animate(opacity, 350ms);
+
+  &:hover, &:focus, &.loading {
+    opacity: 1;
+    @include animate(opacity, 350ms);
+  }
+
+  &.loading{
+    cursor: default;
+  }
+
+  span{
+    display: block;
+  }
+}
+
+
+.spin {
+  animation-name: spin;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+
+/**
+*=============================================================
+* Single post format
+* - Specified by class .devsunset-single-post-container
+*=============================================================
+**/
+
+.devsunset-single-post-container{
+
+  .entry-content{
+    margin-top: 1em;
+    font-weight: 350;
+    letter-spacing: 0.02em;
+    line-height: 1.8em;
+
+    // Paragraph
+    p{
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+      margin-bottom: 0.75em;
+      padding: 0.25em 0.5em;
+
+    }
+
+    // Bold elements
+    b, strong{
+      font-weight: 500;
+    }
+
+    a {
+      color: darkblue;
+
+      &:hover, &:focus{
+        color: green;
+      }
+    }
+
+    .devsunset-tooltip{
+      cursor: pointer;
+      color: #F56B08;
+
+      &:hover, &:focus{
+        font-weight: 500;
+        color: green;
+      }
+    }//.devsunset-tooltip
+
+    .devsunset-popover{
+      cursor: pointer;
+      color: #F56B08;
+
+      &:hover, &:focus{
+        font-weight: 500;
+        color: green;
+      }
+    }//.devsunset-tooltip
+  } //.entry-content
+
+  // Post navigation
+  .devsunset-custom-post-navigation{
+    div.post-link-nav{
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+
+      a{
+        padding: 0 0.1em;
+        margin-top:0;
+        margin-bottom:0;
+      }
+
+      span.devsunset-icon{
+        &:before{
+          font-size: 1em;
+        }
+      }
+    }//div.post-link-nav
+
+
+
+  }//.devsunset-custom-post-navigation
+
+
+  // Social media share
+  .devsunset-share-this{
+    h4{
+      margin: 0.5em auto;
+      padding: 0.2em;
+    }
+
+    // List of social media icons
+    ul{
+      margin: 0.5em auto;
+      padding: 0.2em;
+
+      li{
+        display: inline-block;
+
+        a {
+
+          span.devsunset-icon{
+            width: 2em;
+            height: 2em;
+            color: darkblue;
+            margin: 0 2px;
+            //background-color: rgba(0,0,0,0.5);
+
+          }
+        }//a
+
+        &::marker{
+          content: '';
+        }
+      }//li
+    }//ul
+
+
+  }//..devsunset-custom-social-media-share
+
+  /* Post comments */
+/*
+=========================
+Post comment section
+=========================
+*/
+  ol.comment-list{
+    list-style:none;
+
+    ol.children{
+      list-style:none;
+    }
+  }
+
+  article.comment-body{
+    // Comment metadata
+    footer.comment-meta{
+      .comment-author.vcard{
+        background-color: rgba(0,0,0,0.1);
+
+        img.avatar.avatar-32{
+          border-radius:50%;
+        }
+      }
+    }
+
+    // comment message
+    div.comment-content{
+      border-bottom: 2px solid grey;
+    }
+
+    // Comment reply
+    div.reply{
+      text-align:right;
+
+
+      a.comment-reply-link{
+        text-decoration:none;
+        cursor: pointer;
+        color: $orange-hover;
+
+        &:hover, &:focus{
+          font-weight: 500;
+          color: green;
+        }
+      }
+    }
+  }
+
+
+
+
+
+
+}//.devsunset-single-post-container
+
+
+

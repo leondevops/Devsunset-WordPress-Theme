@@ -1,0 +1,125 @@
+/**
+*    @Package Devsunsettheme
+*
+*  - Generic custom CSS for the Devsunset theme
+**/
+
+.devsunset-contact-form{
+  padding: 2em 0;
+  margin: 0 auto;   // align form in the center
+
+  // Bootstrap form group
+  .form-group{
+    //margin-bottom: 1.2em;
+    margin: 1.2em auto; // align all div input fields to the center
+    max-width: 32em;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      display: block;
+      content: '';
+
+      bottom: 0;
+      left:0;
+      right: 0;
+      height: 2px;
+      background-color: $input-field-underline-color;
+      //background-color: black;
+    }
+  }//.form-group
+
+  // Devsunset form control ~ form-group Bootstrap
+  .devsunset-form-control{
+    //margin: 1.2em auto; // align all div input fields to the center
+    border:none;
+    border-radius: 0;
+    padding: 0.2em 0.6em;
+    outline: none;
+    box-shadow: none;
+
+    /* Create pseudo elements for different type of browsers: */
+    //
+    &::-webkit-input-placeholder {
+      text-transform: uppercase;
+    }
+
+    // Mozilla firefox
+    &::-moz-placeholder {
+      text-transform: uppercase;
+    }
+
+    /***
+    * For microsoft explorer & belows .
+    * - Bootstrap 5 does not support IE
+    */
+   /* &:-ms-placeholder {
+      text-transform: uppercase;
+    }*/
+
+    // Mozilla firefox for all low versions
+    &:-moz-placeholder {
+      text-transform: uppercase;
+    }
+
+    &:hover, &:focus, &:active{
+      box-shadow: none;
+    }
+  }
+
+  // Response messages (success, fail, in-progress)
+  .response-message{
+    margin-bottom: 1.2em;
+  }
+} //.devsunset-contact-form
+
+
+
+#devsunsetContactForm{
+
+
+  // 2. Response message
+  div.response-message{
+    /*span.success-response, span.failure-response{
+      display:none;
+    }*/
+
+    .form-control-message{
+      display:none;
+    }
+
+    // Response message status
+    .success-status{
+      display: block;
+      color: green;
+      font-weight: 400;
+    }
+
+    .failure-status{
+      display: block;
+      color: orangered;
+      font-weight: 400;
+    }
+
+    .in-progress-status{
+      display: block;
+      color: #bababa;
+      font-weight: 300;
+    }
+  }//div.response-message
+
+
+  // 3. Submit button
+  div.devsunset-button-submit-form{
+
+    .button-form-submission{
+      background-color: $background-form-color;
+      border-radius: 2px;
+      font-size: 24px;
+      padding: 0.6em 1.6em;
+      color: #fff;
+      font-weight: 100;
+    }//.button-form-submission
+  } //div.devsunset-button-submit-form
+
+}

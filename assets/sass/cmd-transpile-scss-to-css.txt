@@ -1,0 +1,25 @@
+
+1. Tools 
+https://sass-lang.com/dart-sass
+
+# Documentation:
+
+https://sass-lang.com/dart-sass
+
+
+https://github.com/sass/dart-sass/blob/main/README.md#javascript-api
+
+
+# Source SASS Directory : C:\WebPlatform\apache24\htdocs\vnlabwin\wp-content\themes\devsunset\sass
+# Destination SASS Directory : C:\WebPlatform\apache24\htdocs\vnlabwin\wp-content\themes\devsunset\css
+
+
+#########################
+# 1. change to the root directory of the theme:
+cd C:\WebPlatform\apache24\htdocs\vnlabwin\wp-content\themes\devsunset\assets
+# 2. Watch the source files from "sass" folder, then apply change to "css" folder:
+sass --watch sass:css
+
+
+
+devsunset-widget widget_categories

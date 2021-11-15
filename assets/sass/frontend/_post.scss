@@ -1,0 +1,782 @@
+/**
+*    @Package Devsunsettheme
+*
+*  - Generic custom CSS for the Devsunset theme
+**/
+
+@import '../base/variables'; // Devsunset variables
+@import '../base/mixins';      // Devsunset mixins
+@import '../base/fonticons';   // Devsunset font icons
+@import '../base/placeholders';   // Devsunset text shadow
+@import '../base/wordpress';   // WordPress style
+
+/*
+* ====================================================
+* Post format SECTION
+* ====================================================
+*/
+
+/*
+Standard post format
+----------------------------
+*/
+
+// Apply for all article in blog posts
+// margin can be overlapped. Use padding if we want incremental final values between 2 elements
+article{
+  padding-top: 1em;
+  padding-bottom: 1em;
+
+  //&:first-child{
+  //  padding-top:32px;
+  //}
+
+
+}
+
+
+/* 1. The title */
+h2 {    // h1 in tutorial
+  font-size: 36px;    // 48 px in tutorial
+  font-weight: 400;   // 200 in tutorial
+  // color: $primary-color; // Tutorial value - not working. Fixed!
+
+
+  &.entry-title{
+    line-height: 1.2em;     // 1.5em in tutorial
+    margin: 2em 0 1.2em;    // 50px 0 20px in tutorial
+    padding: 0;
+
+    // Format the heading
+    // Create hover effect
+    a{
+      text-decoration: none;
+      color: $dark-grey;  // Title color
+    }
+
+    a:hover, a:focus {
+      color: $primary-color;
+      @include animate(color, 300ms);   // just apply to color in tutorial
+    }
+
+  }
+
+  &:before, &:after {
+    content: '';   // mark the pseudo element as ~
+    display: inline-block;
+    position: relative;
+  }
+
+  &:before {
+    margin-right: 0.2em ; // 10px in tutorial
+  }
+
+  &:after {
+    margin-left: 0.2em ; // 10px in tutorial
+  }
+}
+
+/* 2. The meta data information */
+.entry-meta{
+  font-size: 16px;    // 13 px in tutorial
+  font-weight: 300;
+  color: $light-grey;
+
+  span a{
+    text-decoration: none;
+    font-weight: 300;
+    color: $dark-grey;
+    //@include animate(all, 500ms);   // just apply to color in tutorial
+
+    &:hover, &:focus {
+      font-weight: 500;
+      color: $dark-grey;
+      @include animate(all, 500ms);   // just apply to color in tutorial
+    }
+  }
+
+
+}
+
+/* 3. Featured images */
+// Embedded hyperlink to post of the featured images
+.standard-featured-link{
+  display:block;
+  position:relative;
+
+  &:hover, &:focus{
+    .standard-featured{
+      &:after{
+        background-color: rgba(0,0,0,0);
+      }
+    }
+  }
+}
+
+// Featured images / post thumbnail
+.standard-featured {
+
+  height: 66vh;   // 30% view height . 330px in tutorial
+  // width: 60vw;    // width is auto by default.
+  width: auto;
+  display: block;
+  position: relative;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  margin: 0 auto; // Center element without Flexbox
+
+  // Create a hover shadow effect
+  &:after{
+    @include animate(background-color, 500ms);  // Apply transition effect to background color
+    content: '';
+    position: absolute;
+    display:block;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background-color: rgba(0,0,0, 0.15);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.35);
+  }
+}
+
+/*
+a {
+    @include animate(all, 320ms);
+    &:hover, &:focus {
+        text-decoration: none;
+        font-weight: 500;
+        color: $dark-grey;
+    }
+}*/
+
+/* 4. The post excerpt */
+
+.entry-excerpt{
+  margin: 1.2em 0 0.8em;  //  30px 0 16px in tutorial
+  p {
+    font-size: 18px;  // 17px in tutorial
+    line-height: 1.5em;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+}
+
+/* 5. "Read more" button */
+
+.button-container{
+  margin-bottom: 1.2em;
+}
+
+.btn-devsunset{
+  @include animate(all, 320ms);
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 300;
+  color: $light-grey;
+  padding: 8px 12px;
+  border-radius: 0;
+  border: 1px solid $light-grey;
+  background-color:transparent;
+
+  &:hover, &:focus{
+    color: #ffffff;
+    border-color: $dark-grey;
+    background-color: $dark-grey;
+
+  }
+}
+
+/* 6. Footers: tags & comments */
+// 6.1. Tags list -
+.entry-footer{
+  padding: 0.4em 0.2em; //10px 5px as tutorial
+  color: $light-grey;
+  border-bottom: 4px solid $lighter-grey;
+
+  a{
+    @include animate(all, 500ms);
+    text-decoration: none;
+    color: $light-grey;
+    display: inline-block;
+    font-size: 12px;
+
+    &:hover, &:focus {
+      color: $dark-grey;
+    }
+  }
+
+  // Styling the tags list
+  .tags-list{
+    .devsunset-icon{
+      margin-right: 0.5em; // 10px at tutorial
+    }
+
+    a {
+      padding: 0 0.5em; // 10px at tutorial
+    }
+  }
+}
+
+// 6.2. Comments counts
+.comments-link{
+  .devsunset-icon{
+    margin-left: 0.5em; // 10px at tutorial
+  }
+}
+
+
+/*
+Image post format
+----------------------------
+*/
+
+.devsunset-format-image{
+  .entry-header{
+    position: relative;
+    z-index: 5;
+    height: 70vh;   // 30% view height . 500px in tutorial
+    //width: 66vw;
+    margin: 2em auto; // Centralize the element without using flexbox.
+    @extend %text-shadow-effect;
+
+    // The container of the excerpts
+    div.entry-excerpt{
+
+
+      // Div .entry-excerpts container
+      &.image-caption {
+        /* 1. The outer container */
+        @extend %background-gradient;
+        position: absolute;
+        z-index: 6;
+        margin:0;
+        display: block;
+        // padding-left: 0.5em;  // OK values
+        // padding-right: 0.5em; // OK values
+        left:0;
+        bottom:0;
+        right:0;
+
+        /* 2. The textual content */
+        p {
+          // background-color: none;
+          margin: 0.5em;
+          z-index: 10;
+        }
+      }
+
+
+    }
+
+
+
+  }
+
+  h2, .entry-header, .entry-meta{
+    a {
+      color: #ffffff;
+    }
+
+
+  }
+
+  h2 {
+    margin-top: 10px;
+
+    a {
+      padding-top: 0.5em;
+    }
+  }
+
+  .entry-excerpt {
+
+    /* &.image-caption{
+       position:absolute;
+
+     }*/
+
+    p{
+      color:#ffffff;
+      text-align: left;
+
+    }
+  }
+
+
+}//.devsunset-format-image
+
+
+/*
+Audio post format
+----------------------------
+*/
+
+.devsunset-format-audio{
+
+  header{
+    h2 {
+      &.entry-title {
+        // display: inline-block;
+        text-align: left;
+        margin: 1em 1em 0 auto;
+        &:before, &:after {
+          display: none;
+        }
+      } // .entry-title
+
+    } //h2
+
+    div.entry-meta{
+      display:flex;
+      flex-direction: row;
+      align-items: flex-start;
+      // margin-left: 1em;
+
+      span {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+
+      }
+    } // div.entry-meta
+
+
+
+  } // header
+
+
+  .entry-content{
+    iframe {
+      width: 100%;
+      height: 20vh;
+    }
+  }//  .entry-content
+
+} // ..devsunset-format-audio
+
+/*
+Video post format
+----------------------------
+*/
+
+.devsunset-format-video{
+
+  header {
+    // margin-top:1.5em;
+
+    h2 {
+      &.entry-title{
+        margin-top: 0.6em;
+      }// .entry-title
+    } //.h2
+
+  }
+
+} //.devsunset-format-video
+
+
+/*
+Gallery post format
+----------------------------
+*/
+
+.devsunset-format-gallery{
+
+  .entry-header{
+    position: relative;
+    z-index: 5;
+    // height: 70vh;   // 30% view height . 500px in tutorial
+    //width: 66vw;
+    margin: 2em auto; // Centralize the element without using flexbox.
+    @extend %text-shadow-effect;
+  }
+
+  h2, .entry-header, .entry-meta{
+    a {
+      color: $light-grey;
+      // text-shadow: 1px 1px black;
+      @include animate(color, 300ms);
+    }
+  }
+
+  h2 {
+    margin-top: 10px;
+
+    a {
+      padding-top: 0.5em;
+    }
+  }
+
+  .entry-content{
+
+    // Must specify width, height of carousel slize & carousel inner ???
+    .carousel.slide{
+      height: 50vh;
+      width: 60vw;
+      margin: 1em auto;
+
+      // 1. carousel contents
+      .carousel-inner{
+        .carousel-item{
+
+          height: 50vh;
+          width: 60vw;
+          overflow: hidden;
+          position: relative;
+
+          // ~ .standard-featured in tutorial
+          &.background-image{
+            &:after{
+              background-color:transparent;
+            }
+          }
+
+          // 2. Image caption
+          div.image-caption{
+            bottom: 0;
+            left:0;
+            right:0;
+            margin:0;
+            position: absolute;
+            @extend %background-gradient;
+            @include animate(transform, 320ms);
+            @include transform(translateY(100%));
+
+            p{
+              color: #fff;
+              text-shadow: 1px 2px black;
+              font-size: 1.1em;
+              margin: 0.5em 1em;
+            }
+          }
+
+          // 2021-Oct-19: Show image caption when hovering the whole carousel item
+          /*&:hover{
+
+            div.image-caption{
+              @include animate(transform, 320ms);
+              @include transform(translateY(0%));
+            }
+
+          }//.carousel-item:hover*/
+
+        }//.carousel-item
+      }// .carousel-inner // Carousel content
+
+
+      // 2. Carousel controller
+      a {
+        /* Generic styling for both left & right arrow */
+        &.carousel-control-next, &.carousel-control-prev{
+          background: none;
+          opacity: 1;
+          filter: alpha(opacity=100);
+          font-size: 32px;  // The size of next, preview button
+          width: auto;
+          @extend %text-shadow-effect;
+          text-decoration: none;
+
+          &:hover {
+            div.preview-container {
+              //border: 2px solid black;
+              background-color: rgba(0,0,0,0.8);
+              @include animate(background-color, 320ms);
+
+              span.thumbnail-container {
+                @include transform(scale(1));
+
+              }
+            }
+
+          }
+        }
+
+        // 1. Preview container - generic properties
+        div.preview-container {
+
+          //border: 2px solid black;
+          padding: 0.5em;
+          background-color: rgba(0,0,0,0);  // rgba(0,0,0,0.8 when hover);
+          line-height: 0;
+          @include animate(background-color, 320ms);
+
+
+          // Thumbnail container - generic properties
+          span.thumbnail-container{
+            position: absolute;
+            display:block;
+            height: 2.5em; //font-size: 38px;  // The size of next, preview button
+            width: 2.5em;
+            border-radius: 50%;
+            background: #999;
+            // transform : scale(0); // working
+            @include animate(transform, 320ms);
+            @include transform(scale(0));
+          }
+
+          // Arrow - generic properties
+          span.devsunset-icon{
+            color:#ffffff;
+          }
+
+        } // div.preview-container
+
+
+
+        // 2. Left thumbnail transition area
+        &.left{
+          div.table div.table-cell div.preview-container {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: flex-start;
+
+            padding-right: 2.4em; //the length of preview button
+            // border: 2px solid white;
+            border-radius: 0 45% 45% 0;
+
+            // Thumbnail container - left side
+            span.thumbnail-container{
+              left: 1.25em;
+            }
+
+            // Arrow - left side
+            span.devsunset-icon{
+              color:#ffffff;
+              margin-left:0;
+              padding-left:0;
+            }
+          }
+        }
+
+        // 3. Right thumbnail transition area
+        &.right{
+          div.table div.table-cell div.preview-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+
+            padding-left: 2em;
+            // border: 2px solid white;
+            border-radius: 45% 0 0 45%;
+
+            // Thumbnail container - right side
+            span.thumbnail-container{
+              right: 1.2em;
+            }
+
+            // Arrow - right side
+            span.devsunset-icon{
+              color:#ffffff;
+              margin-right:0;
+              padding-right:0;
+            }
+          }
+        }
+
+        /*&:hover, &:focus{
+          .preview-container{
+            .thumbnail-container{
+              @include transform(scale(1));
+            }
+          }*/
+
+
+      }// a generic carousel control
+
+    }//.carousel.slide
+
+
+
+  }//.entry-content
+
+  //Effect when hovering on top of the whole post
+  &:hover{
+    .entry-content {
+      .carousel.slide {
+        .carousel-inner {
+          .carousel-item {
+            div.image-caption {
+              @include animate(transform, 320ms);
+              @include transform(translateY(0%));
+            }
+          }//.carousel-item
+        }//.carousel-inner
+      }//.carousel.slide
+    }//.entry-content
+  }//.post-format-gallery:hover
+
+}//.devsunset-format-gallery
+
+
+/*
+Quote post format
+----------------------------
+*/
+
+.devsunset-format-quote{
+
+  .quote-content{
+    display: flex;
+    flex-direction:row;
+    position:relative;
+    font-size: 1.5em;
+    font-weight: 200;
+    line-height: 1.2em;
+    letter-spacing: 0.03em;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom:0;
+
+    left: 0;
+    right:0;
+
+    &:before {
+      content: '"';
+      display:inline-block;
+      position: relative;
+      color: #ccc;
+    }
+
+    &:after {
+      content: '"';
+      display:inline-block;
+      position: relative;
+      color: #ccc;
+    }
+
+    a{
+      text-decoration:none;
+      color: $dark-grey;
+      text-shadow: 1px 1px black;
+    }
+  }//.quote-content
+
+  .quote-author{
+    color: #898989;
+  }//.quote-author
+} //.devsunset-format-quote
+
+/*
+Link post format
+----------------------------
+*/
+
+.devsunset-format-link{
+
+  header.entry-header{
+
+    h2 {
+      &.entry-title{
+        &:before, &:after{
+          display:none;
+        }
+
+        a{
+          display:block;
+        }
+
+        .link-icon{
+          display: table;
+          //display:block;
+          color: #fff;
+          font-size: 32px;
+          width: 1.5em;
+          height:1.5em;
+          margin: 0 auto;
+          border-radius: 50%;
+          background-color: rgba(0,0,0,0.6);
+
+          span.devsunset-icon{
+            display: table-row;
+            margin:0;
+            position:relative;
+
+
+            &:before{
+              position: absolute;
+              top:0.3em;
+              bottom: 0;
+              left: 0;
+              right: 0;
+            }
+          }
+        }// link-icon
+      }// h2.entry-title
+
+    } //h2
+  }//header.entry-header
+}//.devsunset-format-link
+
+/*
+Aside post format
+----------------------------
+*/
+
+.devsunset-format-aside{
+
+  .aside-container{
+    background-color: rgba(0,0,0,0.08);
+    padding-top: 0.8em;
+
+    div.row{
+      div.col-xs-2.col-md-2.col-sm-3{
+        a{
+          top:0;
+          bottom:0;
+          left:0;
+          right:0;
+          margin:0;
+        }
+      }
+    }
+  }
+
+
+  // Featured images:
+  .aside-featured{
+    margin: 0 auto;
+    // overflow: hidden;
+    border-radius: 50%;
+  }
+
+
+  /* Max SM width = 767 px according to Bootstrap 5.1 grid documents
+  */
+  @media(max-width:$max-sm-width){
+    .aside-featured{
+      width: 8em;
+      height: 8em;
+    }
+  }
+
+  @media(min-width:$min-md-width){
+    .aside-featured{
+      width: 12vw;
+      height: 12vw;
+    }
+  }
+
+
+  .entry-content{
+    .entry-excerpt{
+      margin-top: 0;
+      margin-bottom: 0.2em;
+      p {
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  .row-entry-footer{
+    margin:0;
+    border-bottom: none;
+    background-color: rgba(0,0,0,0.05);
+
+    .entry-footer{
+      border-bottom: none;
+      //background-color: rgba(0,0,0,0.05);
+    }
+  }//.row-entry-footer
+}

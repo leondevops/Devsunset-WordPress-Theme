@@ -1,0 +1,560 @@
+/**
+*    @Package devsunsettheme
+*
+*  - Generic custom CSS for the Devsunset theme
+**/
+
+@import '../base/variables'; // Devsunset variables
+@import '../base/mixins';      // Devsunset mixins
+@import '../base/fonticons';   // Devsunset font icons
+@import '../base/placeholders';   // Devsunset text shadow
+@import '../base/wordpress';   // WordPress style
+
+/*
+* -------------------------
+* SIDEBAR SECTION - FRONTEND PAGE
+* ---------------------------
+*/
+
+/* 1. Sidebar navigation menu */
+.devsunset-sidebar-menu{
+
+  // generic sidebar navigation menu container
+  ul.nav.navbar-nav.navbar-collapse{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }//ul.nav.navbar-nav.navbar-collapse
+
+  .menu-item-has-children{
+
+    // Embedded hyperlink
+    a{
+      display:inline-block;
+    }
+
+    // Dropdown button to open submenu
+    span.dropdown-toggle {
+      width: 1.5em;
+      height: 1.5em;
+      display:inline-block;
+      //border:1px solid white;
+      margin: 0 auto;
+      filter:  brightness(0) invert(1); // filter white
+    }
+
+    // sub-menu
+    ul.dropdown-menu{
+      position: relative;
+      border: 1px solid white;
+      border-radius: 2px;
+    }
+  }//.menu-item-has-children
+
+  /** Cannot use toggle class. Need to assign CSS directly to overwrite Bootstrap JS behaviors**/
+  /*.JS-open-submenu-lvl-0{
+    display:block;
+    position:relative;
+    transform: none;
+    @include animate(all, 350);
+  }*/
+
+}//.devsunset-sidebar-menu
+
+/* 2. General Sidebar overlay */
+.sidebar-overlay{
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.3);
+  position: fixed;
+  // Indicate z-index below the sidebar (z - index:99) & sidebar open (z -index 98)
+  z-index:19;
+  display:none;
+  cursor: e-resize;
+}
+
+/* 2. Inner sidebar container */
+// Inner sidebar container
+.devsunset-sidebar-container{
+  margin:0;
+  padding:0;
+  max-width: 300px;
+}
+
+// Generic sidebar container
+.devsunset-sidebar{
+  position: fixed;
+  top: 0;
+  right:0;
+  bottom:0;
+  z-index:99; // The sidebar is on top of everything
+  color: #ffffff;
+  background-color: #1f1f1f;
+  width: 100%;
+  max-width: 300px;
+  height: 100vh;
+  // overflow: scroll;
+  overflow: scroll;
+  @include animate(transform, 350ms);
+
+  &.sidebar-closed{
+    @include transform( TranslateX(100%) );
+  }
+
+  // Style all hyperlinks
+  a {
+    text-decoration: none;
+    font-weight: 300;
+    color: #bababa;
+
+    &:hover, &:focus {
+      font-weight: 500;
+      color: #fff;
+      //@include animate(all, 350ms);
+    }
+  }
+
+  // Inner sidebar container
+  .devsunset-sidebar-container{
+    position: relative;
+    display:block;
+    width: 100%;
+    max-width: 300px;   // Same as devsunset-sidebar-container
+    height: 100vh;
+  }
+  /* Sidebar content */
+  .sidebar-scroll{
+    position:relative;
+    display:block;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  /* Sidebar close buttons */
+  .sidebar-close{
+    text-decoration: none;
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+    color: #ffffff;
+    cursor:pointer;
+    z-index: 99;  //Higher than sidebar overlay
+
+    //padding-top: 1em;
+
+    &:hover, &:focus{
+      color: $orange-hover;
+    }
+  }
+
+
+
+}
+
+/* Sidebar open button & open button containers */
+.devsunset-open-sidebar-container{
+  position: sticky;
+  top:1em;
+  right:1em;
+  //border: 2px solid red;
+  width: 2em;
+  height: 2em;
+  background-color: rgba(0,0,0,0.1);
+  //background-color: rgba(255,255,255, 0.2);
+  font-size:12px;
+  text-shadow: 1px 1px black;
+  z-index: 98;    // right behind sidebar
+
+  /* Sidebar open button &  */
+  .sidebar-open{
+    position: absolute;
+    //top: 0.5em;
+    //right: 0.5em;
+    margin: 0;
+    padding: 0.25em 0.25em 0.25em 0.25em;
+    //padding: 0.25em;
+    color: #ffffff;
+    cursor:pointer;
+  }
+}
+
+/** Custom widget - Devsunset widget **/
+.devsunset-widget-custom-profile{
+  h3.devsunset-username, h4.devsunset-description {
+    font-weight: 100;
+    color: #FFF;
+  }
+
+  h3.devsunset-username{
+    font-size: 1em;
+    margin: 0 0 5px;
+
+  }
+
+  h4.devsunset-description {
+    font-size: 1.2em;
+    margin: 5px 5px 10px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+
+  /*
+  * Sidebar - dash icons wrapper.
+  * ==================
+  **/
+
+  // Front-end Devsunset icons
+  .icons-wrapper{
+    .devsunset-icon-sidebar{
+      //color: #FFF;  // Not work
+      filter:  brightness(0) invert(1); // CSS filter for white color
+      margin: 0 2px;
+      width: 1em;
+      height: 1em;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  /** Remove button in the profile picture */
+  .devsunset-icon-button:before {
+    /*margin-top : 0.5em;*/
+    margin-bottom: 0.2em;
+    vertical-align: middle;
+  }
+
+  /*
+  * Profile picture
+  * ==================
+  **/
+  div.profile-image-container {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+  }
+
+
+  div.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 10px auto;
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+}
+
+/**
+* General widget section
+* ----------------------------------------------
+**/
+
+.devsunset-widget{
+  margin: 10px;
+  padding: 0 5px;
+
+  // Widget title
+  h2.devsunset-widget-title{
+    font-size: 15px;
+    padding: 0.5em;
+    font-weight: 300;
+    display:block;
+    text-align: center;
+    background-color: #303030;
+    border-radius: 15px;
+    line-height: 1em;
+    letter-spacing: 0.1em;
+  }
+
+  /* 1. Default tag cloud widget */
+  &.widget_tag_cloud{
+    // Widget tags
+    div.tagcloud{
+      text-align: center;
+
+      // Tag links
+      a{
+        display: inline-block;
+        background-color: rgba(0,0,0,0.2) ;// #7d7d7d in tutorial
+        //background-color: darkgrey;
+        padding: 0.1em 0.4em;
+        border-radius: 3px;
+      }
+    }//div.tagcloud
+  }//.widget_tag_cloud
+
+
+
+  /* 2. Default categories widget */
+  &.widget_categories{
+
+    // lists item
+    ul{
+      // list-style: circle;
+
+      padding-left:1em;
+      padding-right:1em;
+
+      li.cat-item {
+        //text-align: right;
+        margin-left:0;
+        margin-right:0;
+        padding-left:0;
+        padding-right:0;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        span {
+          text-align: center;
+          //vertical-align: center;
+          width: 1.6em;
+          height: 1.6em;
+          //font-size: 25px;
+          margin-bottom: 0.2em;
+          background-color: $dark-grey;
+          border-radius: 50%;
+        }//a
+      }//li.cat-item
+
+    }// ul
+  }//.&.widget_categories
+
+  /* Default recent-comments widget */
+  &.widget_recent_comments{
+    ul{
+      list-style: none;
+      padding-left:1em;
+      padding-right:1em;
+
+
+      // Comment list item
+      li.recentcomments{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        white-space: nowrap;
+        align-items: stretch;
+        width:90%;
+        //width:25vw;
+        max-width: 250px;
+
+        // comment author
+        span.comment-author-link{
+          flex-basis: 100%;
+          border-bottom: 1px solid grey;
+          padding-left: 0;
+          margin-left:0;
+          padding-right: 0.5em;
+          margin-right: 0.5em;
+
+
+          a{
+            font-size:1em;
+            font-weight: 500;
+
+          }
+
+        }
+
+        // author's commenters's post title
+        a {
+          text-align: right;
+          flex-basis: 80%;
+          font-size: 0.6em;
+          font-weight: 300;
+          flex-shrink: 2;
+
+          width:90%;
+          //width:25vw;
+          max-width: 250px;
+        }
+      }
+    }//ul
+  }//&.widget_recent_comments
+
+
+  /* 4. Custom recent-comments widget. &.devsunset_widget_recent_comments */
+  &.devsunset_widget_recent_comments{
+    ul{
+      list-style: none;
+      padding-left:1em;
+      padding-right:1em;
+
+
+      // Comment list item
+      //noinspection ALL
+      li.recentcomments{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        white-space: nowrap;
+        align-items: stretch;
+        width:90%;
+        //width:25vw;
+        max-width: 250px;
+
+        // comment author
+        span.comment-author-link{
+          flex-basis: 100%;
+          border-bottom: 1px solid grey;
+          padding-left: 0;
+          margin-left:0;
+          padding-right: 0.5em;
+          margin-right: 0.5em;
+
+
+          a{
+            font-size:0.8em;
+            font-weight: 500;
+
+          }
+
+        }
+
+        // Comment post info
+        div.devsunset-comment-detail{
+          display: inline-block;
+          text-align: justify;
+          width: 100%;
+          max-width: 250px;
+          height: auto;
+          word-break: break-all;
+          word-wrap: break-word;
+
+          // Comments' post indicators:
+          span{
+            display: inline-block;
+            font-size: 0.9em;
+            font-weight: 400;
+          }
+
+          // author's commenters's post title
+
+          a {
+            width: 90%;
+            max-width: 250px;
+            height: auto;
+            display: inline-block;
+            font-size: 0.8em;
+            // word-break: break-all;
+            white-space: break-spaces;  // OK but too much space
+
+            //text-align: justify;
+
+            width:90%;
+            max-width: 250px;
+          }//a
+
+        }//div.devsunset-comment-detail
+
+
+      }
+    }//ul
+  }//&.devsunset_widget_recent_comments
+
+  /* 5. Custom widgets - most popular posts */
+  &.devsunset-widget-popular-posts{
+
+    div.media{
+      display: flex;
+      flex-direction: column;
+
+      //padding-top: 0.25em;
+      //padding-bottom: 0.25em;
+      padding: 0.25em 0.5em;  // Update value padding
+      margin: 0.25em;     // Update margin
+      //margin-top:0.25em;
+      //margin-bottom:0.25em;
+      //word-break: break-all;
+      //word-wrap: break-word;
+
+    }//div.media
+
+    // 5.1. Media content
+    div.media-content{
+      display: flex;
+      flex-direction: row;
+      padding-bottom: 0.25em;
+
+      // Post format logo
+      div.media-left{
+        img{
+          padding-top: 0.5em;
+          padding-right: 0.5em;
+        }
+      }//div.media-left
+
+      // Post title
+      div.media-body{
+        display: inline-block;
+
+        a {
+          text-decoration: none;
+          white-space: break-spaces;  // OK but too much space
+          font-weight: 400;
+          font-size: 0.8em;
+          color: #bababa;
+          margin: auto 0;
+
+          &:hover, &:focus {
+            //font-weight: 500;
+            color: #fff;
+            white-space: break-spaces;  // OK but too much space
+            //@include animate(all, 350ms);
+          }
+        }//a
+      }//.div.media-body
+    }// media content
+
+    //5.2. Media meta
+    div.media-meta{
+      font-size: 0.8em;
+      border-top: 1px solid grey;
+      display: flex;
+      flex-direction:row;
+      align-items: center;
+      justify-content: space-between;
+      color: #bababa;
+
+      // Logo
+      div.meta-share, div.meta-comments{
+        display:inline-block;
+        width: 50%;
+        height: 1.2em;
+        padding: 0.25em 0;
+
+        margin-left:0;
+        margin-right:0;
+        margin-bottom:0.25em;
+
+
+        span{
+          display:inline-block;
+          width: 1em;
+          height: 1em;
+          padding-right:0.2em;
+        }
+
+        p{
+          display:inline-block;
+          padding-left: 0.02em;
+        }
+      }
+    }
+  }//.devsunset-widget-popular-posts
+
+}//.devsunset-widget
+

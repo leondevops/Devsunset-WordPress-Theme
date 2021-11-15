@@ -1,0 +1,115 @@
+/*
+    @Package Devsunsettheme
+*/
+#wpbody {
+  /*border: 2px solid red;*/
+
+}
+
+#wpcontent {
+  font-family: 'Raleway', 'Helvetica Neue', 'Helvetica', Ariial ,Verdana, sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
+}
+
+/**
+*==================================================
+* SIDEBAR
+*==================================================
+**/
+.devsunset-general-form, .devsunset-sidebar-preview{
+  display: inline-block;
+  float: left;
+}
+
+.devsunset-sidebar-preview{
+  width: 280px;
+  background-color: #1F1F1F;
+  padding: 10px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.devsunset-sidebar{
+  display: block;
+  text-align: center;
+}
+
+.devsunset-sidebar:before{
+  width: 1.5em;
+  height: 1.5em;
+}
+
+h3.devsunset-username, h4.devsunset-description {
+  font-weight: 100;
+  color: #FFF;
+}
+
+h1.devsunset-username{
+  font-size: 2em;
+  margin: 0 0 5px;
+
+}
+
+h2.devsunset-description {
+  font-size: 1.2em;
+  margin: 5px 5px 10px;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+/*
+* Sidebar - dash icons wrapper.
+* ==================
+**/
+
+
+.devsunset-icon-sidebar {
+  color: #FFF;
+  margin: 0 2px;
+}
+
+.devsunset-icon-sidebar-gplus {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+/** Remove button in the profile picture */
+.devsunset-icon-button:before {
+  /*margin-top : 0.5em;*/
+  margin-bottom: 0.2em;
+  vertical-align: middle;
+}
+
+/*
+* Profile picture
+* ==================
+**/
+
+div.profile-image-container {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+
+div.profile-picture {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 10px auto;
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*
+div.profile-picture img {
+    width: 100%;
+    height: auto;
+}*/
